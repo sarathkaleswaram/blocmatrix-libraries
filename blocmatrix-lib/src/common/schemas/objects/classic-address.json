@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "classicAddress",
+  "description": "A classic address (Account ID) for the BMC Ledger",
+  "type": "string",
+  "format": "classicAddress",
+  "link": "classic-address",
+  "pattern": "^b[1-9A-HJ-NP-Za-km-z]{24,34}$"
+}

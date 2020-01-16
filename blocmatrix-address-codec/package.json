@@ -1,0 +1,36 @@
+{
+  "name": "blocmatrix-address-codec",
+  "version": "0.1.0",
+  "description": "encodes/decodes base58 encoded BMC Ledger identifiers",
+  "files": [
+    "dist/*",
+    "build/*"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "ISC",
+  "dependencies": {
+    "base-x": "^3.0.7",
+    "create-hash": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sarathkaleswaram/blocmatrix-libraries/blocmatrix-address-codec.git"
+  },
+  "prepublish": "tsc",
+  "prepublishOnly": "tslint -p ./ && jest",
+  "scripts": {
+    "compile": "tsc",
+    "test": "jest",
+    "lint": "tslint -p ./"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^10.12.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.19.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.1.3"
+  }
+}
