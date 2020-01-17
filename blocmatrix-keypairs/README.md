@@ -1,6 +1,6 @@
-# ripple-keypairs [![NPM](https://img.shields.io/npm/v/ripple-keypairs.svg)](https://npmjs.org/package/ripple-keypairs) [![Build Status](https://img.shields.io/travis/ripple/ripple-keypairs/master.svg)](https://travis-ci.org/ripple/ripple-keypairs) [![codecov.io](http://codecov.io/github/ripple/ripple-keypairs/coverage.svg?branch=master)](http://codecov.io/github/ripple/ripple-keypairs?branch=master)
+# blocmatrix-keypairs
 
-An implementation of ripple keypairs & wallet generation using
+An implementation of blocmatrix keypairs & wallet generation using
 [elliptic](https://github.com/indutny/elliptic) which supports rfc6979 and
 eddsa deterministic signatures.
 
@@ -29,7 +29,7 @@ Verify a signature for a given hex-encoded message and public key. Returns true 
 ```
 deriveAddress(publicKey: string) -> string
 ```
-Derive a Ripple address from a public key.
+Derive a Blocmatrix address from a public key.
 
 ```
 deriveNodeAddress(publicKey: string) -> string
@@ -37,7 +37,7 @@ deriveNodeAddress(publicKey: string) -> string
 Derive a node address from a public key.
 
 
-## Generate a random Ripple address
+## Generate a random Blocmatrix address
 
 ```
 const seed = generateSeed();

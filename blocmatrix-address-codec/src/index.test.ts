@@ -6,137 +6,137 @@ import {
 } from './index'
 
 const testCases = [
-  // [
-  //   'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
-  //   false,
-  //   'X7AcgcsBL6XDcUb289X4mJ8djcdyKaB5hJDWMArnXr61cqZ',
-  //   'T719a5UwUCnEs54UsxG9CJYYDhwmFCqkr7wxCcNcfZ6p5GZ'
-  // ],
-  // [
-  //   'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
-  //   1,
-  //   'X7AcgcsBL6XDcUb289X4mJ8djcdyKaGZMhc9YTE92ehJ2Fu',
-  //   'T719a5UwUCnEs54UsxG9CJYYDhwmFCvbJNZbi37gBGkRkbE'
-  // ],
-  // [
-  //   'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
-  //   14,
-  //   'X7AcgcsBL6XDcUb289X4mJ8djcdyKaGo2K5VpXpmCqbV2gS',
-  //   'T719a5UwUCnEs54UsxG9CJYYDhwmFCvqXVCALUGJGSbNV3x'
-  // ],
-  // [
-  //   'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
-  //   11747,
-  //   'X7AcgcsBL6XDcUb289X4mJ8djcdyKaLFuhLRuNXPrDeJd9A',
-  //   'T719a5UwUCnEs54UsxG9CJYYDhwmFCziiNHtUukubF2Mg6t'
-  // ],
-  // [
-  //   'rLczgQHxPhWtjkaQqn3Q6UM8AbRbbRvs5K',
-  //   false,
-  //   'XVZVpQj8YSVpNyiwXYSqvQoQqgBttTxAZwMcuJd4xteQHyt',
-  //   'TVVrSWtmQQssgVcmoMBcFQZKKf56QscyWLKnUyiuZW8ALU4'
-  // ],
-  // [
-  //   'rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo',
-  //   false,
-  //   'X7YenJqxv3L66CwhBSfd3N8RzGXxYqPopMGMsCcpho79rex',
-  //   'T77wVQzA8ntj9wvCTNiQpNYLT5hmhRsFyXDoMLqYC4BzQtV'
-  // ],
-  // [
-  //   'rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo',
-  //   58,
-  //   'X7YenJqxv3L66CwhBSfd3N8RzGXxYqV56ZkTCa9UCzgaao1',
-  //   'T77wVQzA8ntj9wvCTNiQpNYLT5hmhR9kej6uxm4jGcQD7rZ'
-  // ],
-  // [
-  //   'rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW',
-  //   23480,
-  //   'X7d3eHCXzwBeWrZec1yT24iZerQjYL8m8zCJ16ACxu1BrBY',
-  //   'T7YChPFWifjCAXLEtg5N74c7fSAYsvSokwcmBPBUZWhxH5P'
-  // ],
-  // [
-  //   'rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW',
-  //   11747,
-  //   'X7d3eHCXzwBeWrZec1yT24iZerQjYLo2CJf8oVC5CMWey5m',
-  //   'T7YChPFWifjCAXLEtg5N74c7fSAYsvTcc7nEfwuEEvn5Q4w'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   false,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtV5fdx1mHp98tDMoQXb',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQn49b3qD26PK7FcGSKE'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   0,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtV8AqEL4xcZj5whKbmc',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnSy8RHqGHoGJ59spi2'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   1,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtV8xvjGQTYPiAx6gwDC',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnSz1uDimDdPYXzSpyw'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   2,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtV8zpDURx7DzBCkrQE7',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnTryP9tG9TW8GeMBmd'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   32,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtVoYiC9UvKfjKar4LJe',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnT2oqaCDzMEuCDAj1j'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   276,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtVoKj3MnFGMXEFMnvJV',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnTMgJJYfAbsiPsc6Zg'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   65591,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtVozpjdhPQVdt3ghaWw',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQn7ryu2W6njw7mT1jmS'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   16781933,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtVqrDUk2vDpkTjPsY73',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnVsw45sDtGHhLi27Qa'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   4294967294,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtV1kAsixQTdMjbWi39u',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnX8tDFQ53itLNqs6vU'
-  // ],
-  // [
-  //   'rGWrZyQqhTp9Xu7G5Pkayo7bXjH4k4QYpf',
-  //   4294967295,
-  //   'XVLhHMPHU98es4dbozjVtdWzVrDjtV18pX8yuPT7y4xaEHi',
-  //   'TVE26TYGhfLC7tQDno7G8dGtxSkYQnXoy6kSDh6rZzApc69'
-  // ],
   [
-    'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh',
+    'bfSndjP5m82SjJxza43crgYPGvSDtBRS6t',
+     0,
+    'X7FWWtzh5V9HM86wj9ifb56d2gynvzGoZyaiBBpgKpQBcFu',
+    'T7kpAb9s2S6JoJTmzx21u5TYh3VtSZvqX9hJ7iGUuCM3n9a'
+  ],
+  [
+    'bfSndjP5m82SjJxza43crgYPGvSDtBRS6t',
+    1,
+    'X7FWWtzh5V9HM86wj9ifb56d2gynvzGFCTp1gaioYo4MeuW',
+    'T7kpAb9s2S6JoJTmzx21u5TYh3VtSZvicczKy8aL94253eW'
+  ],
+  [
+    'bfSndjP5m82SjJxza43crgYPGvSDtBRS6t',
+    14,
+    'X7FWWtzh5V9HM86wj9ifb56d2gynvzHht59DwweRdzuzWP4',
+    'T7kpAb9s2S6JoJTmzx21u5TYh3VtSZAaqtaCTq1xNr9WqWt'
+  ],
+  [
+    'bfSndjP5m82SjJxza43crgYPGvSDtBRS6t',
+    11747,
+    'X7FWWtzh5V9HM86wj9ifb56d2gynvzMaDSmwpt9py4Fhut1',
+    'T7kpAb9s2S6JoJTmzx21u5TYh3VtS2b3wc5cLZ4ZZycxXqf'
+  ],
+  [
+    'bfSndjP5m82SjJxza43crgYPGvSDtBRS6t',
     false,
-    'XVPcpSm47r1CZkf5AkKM9a84dQHe3m4sBhsbA4XtnBECTAc',
-    'TVK3SYvMLZR6bEtLDZh3saYHaqFSeMpn3Dz7EsmQC63VUwh'
+    'X7FWWtzh5V9HM86wj9ifb56d2gynvzBy4geNV2cjV3kCgPg',
+    'T7kpAb9s2S6JoJTmzx21u5TYh3VtSZibKirgoEiGnjQNzYx'
   ],
   [
-    'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh',
+    'bhfaQEExdFeP7nxPAJTrZ2Yisu8QHPA5E5',
+    false,
+    'X7dCCNyW3oxmstHg7eUQYCdtSopojGRsxPn7rgfZADwNV1Z',
+    'T7ZUnM37zmW8VQhHkSABSCP8vNZcNinnuZpvuMMaXjeCW88'
+  ],
+  [
+    'bhfaQEExdFeP7nxPAJTrZ2Yisu8QHPA5E5',
+    58,
+    'X7dCCNyW3oxmstHg7eUQYCdtSopojGWydrZrDaekYR5aybE',
+    'T7ZUnM37zmW8VQhHkSABSCP8vNZcNiBb2mXsWmtH3y5KsFu'
+  ],
+  [
+    'bwgm8oEWbVCuP6M93tLbSFxNpDGcDcLWXY',
+    23480,
+    'XVbf4vggUgqd5vra78CbWdjR3DCLaHtujSAMHSBBYoSEJL9',
+    'T7vdopqChePCwSM6krP8QdVKrCU3r1YAgctorfQ59LyU4db'
+  ],
+  [
+    'bwgm8oEWbVCuP6M93tLbSFxNpDGcDcLWXY',
+    11747,
+    'XVbf4vggUgqd5vra78CbWdjR3DCLaHu5rkPqDDuNEDvNxK9',
+    'T7vdopqChePCwSM6krP8QdVKrCU3r1ZkYvMHWu3kqtUkQHr'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    false,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fy8Pr1syK1uFQzjEN8s',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZSRZsbRdZ9MbWo9QT3'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
     0,
-    'XVPcpSm47r1CZkf5AkKM9a84dQHe3mS14LVdcxAFubk93tF',
-    'TVK3SYvMLZR6bEtLDZh3saYHaqFSeMauKWTnveBMVCzEpvy'
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fy1Do9Wrb7KmNiVS16Z',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZXEkK7sK9ZHq7SrK65'
   ],
   [
-    'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh',
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    1,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fy1NtdScWQ9t75nD6J6',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZXGqoQhFnPRnDWy38y'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    2,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fy1Ezf4ebKzb5TV6H2t',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZXHAHLaKbDYKbUXFzN'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    32,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fy1FFZKQyw1kqqCTUko',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZXimjG1GifHSQQR7ze'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    276,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fy1r6pXH13fY8YzdAWz',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZXdeU7kwoMnPfp7DM8'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    65591,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fytEzdoGSGECQAyfnvH',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZYHAok5jAVUbWD3d2o'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    16781933,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fyuHBav8yh8mzV7o9tn',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZZK3GtEGkpJrbR5jEA'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    4294967294,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fyxptxswTKPPG4Z2Z1j',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZchifzckzcuiu1Ex2N'
+  ],
+  [
+    'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
+    4294967295,
+    'X7CgCZQJtrkHH3Jx3ZJ3UyX3nLY3fyxszRyBxEDWWajfdis',
+    'T7rDnCZHkZJJ5enZQ4puayHpY8hvdZcnArveEvTsa6wY53c'
+  ],
+  [
+    'bKsa7XNTpJ2oWftVZyqx32sr8K7SCRqkB3',
+    false,
+    'XV7KZ6KuZnV6XWuFCFxmKfctuu77wrjLaXzCDtCRMnDxdSh',
+    'TVPqyo7tRss5ypgRAd6YDf4oPMbGgBP4s6xfXZtAAciwnCM'
+  ],
+  [
+    'bKsa7XNTpJ2oWftVZyqx32sr8K7SCRqkB3',
+    0,
+    'XV7KZ6KuZnV6XWuFCFxmKfctuu77wrFwHFTGuVn4wya5PXT',
+    'TVPqyo7tRss5ypgRAd6YDf4oPMbGgB7UNzQjDwJtmYRZjCr'
+  ],
+  [
+    'bKsa7XNTpJ2oWftVZyqx32sr8K7SCRqkB3',
     13371337,
-    'XVPcpSm47r1CZkf5AkKM9a84dQHe3mWCQhit9RbLZmCFiqs',
-    'TVK3SYvMLZR6bEtLDZh3saYHaqFSeMw6MNFLTaN1wKxsQMA'
+    'XV7KZ6KuZnV6XWuFCFxmKfctuu77wr1xKYFXRA31qgNxh68',
+    'TVPqyo7tRss5ypgRAd6YDf4oPMbGgBXzG5myjc4QSJycgBe'
   ]
 ]
 
@@ -162,7 +162,7 @@ const testCases = [
   }
 
   {
-    const classicAddress = 'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh'
+    const classicAddress = 'bGWbZyQqhTp9Xu7G5Pkayo7rXjH4k4QYpf'
     const tag = MAX_32_BIT_UNSIGNED_INT + 1
 
     test(`Converting ${classicAddress}:${tag}${network} throws`, () => {
@@ -173,7 +173,7 @@ const testCases = [
   }
 
   {
-    const classicAddress = 'b'
+    const classicAddress = 'r'
     test(`Invalid classic address: Converting ${classicAddress}${network} throws`, () => {
       expect(() => {
         classicAddressToXAddress(classicAddress, false, isTestAddress)
@@ -237,5 +237,5 @@ test(`Invalid Account ID throws`, () => {
 })
 
 test(`isValidXAddress returns false for invalid X-address`, () => {
-  expect(isValidXAddress('XVLhHMPHU98es4drozjVtdWzVbDjtV18pX8zeUygYbCgbPh')).toBe(false)
+  expect(isValidXAddress('XVLhHMPHU98es4dbozjVtdWzVrDjtV18pX8zeUygYrCgrPh')).toBe(false)
 })

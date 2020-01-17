@@ -1,4 +1,4 @@
-import {RippledError, ValidationError} from 'ripple-api/common/errors'
+import {BlocmatrixdError, ValidationError} from 'blocmatrix-api/common/errors'
 import requests from '../../fixtures/requests'
 import responses from '../../fixtures/responses'
 import {assertRejects, assertResultMatch, TestSuite} from '../../utils'
@@ -43,7 +43,7 @@ export default <TestSuite>{
   'does not overwrite Fee in Instructions': async (api, address) => {
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
-      fee: '0.000014' // CAUTION: This `fee` is specified in XRP, not drops.
+      fee: '0.000014' // CAUTION: This `fee` is specified in BMC, not drops.
     }
     const txJSON = {
       TransactionType: 'DepositPreauth',
@@ -492,7 +492,7 @@ export default <TestSuite>{
     )
   },
 
-  // Paths: is not auto-filled by ripple-lib.
+  // Paths: is not auto-filled by blocmatrix-lib.
 
   // Other errors:
 
@@ -581,7 +581,7 @@ export default <TestSuite>{
     }
     await assertRejects(
       api.prepareTransaction(txJSON, localInstructions),
-      RippledError,
+      BlocmatrixdError,
       'Account not found.'
     )
   },
@@ -607,7 +607,7 @@ export default <TestSuite>{
   //
   //   Error: DepositPreXXXX is not a valid name or ordinal for TransactionType
   //
-  // at Function.from (ripple-binary-codec/distrib/npm/enums/index.js:43:15)
+  // at Function.from (blocmatrix-binary-codec/distrib/npm/enums/index.js:43:15)
   'prepares tx when TransactionType is invalid': async (api, address) => {
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
@@ -653,7 +653,7 @@ export default <TestSuite>{
 
   // Note: This transaction will fail at the `submit` step:
   //
-  // [RippledError(Submit failed, { resultCode: 'temMALFORMED',
+  // [BlocmatrixdError(Submit failed, { resultCode: 'temMALFORMED',
   // resultMessage: 'Malformed transaction.',
   // engine_result: 'temMALFORMED',
   // engine_result_code: -299,
@@ -773,7 +773,7 @@ export default <TestSuite>{
     assertResultMatch(response, responses.preparePayment.normal, 'prepare')
   },
 
-  'min amount xrp': async (api, address) => {
+  'min amount bmc': async (api, address) => {
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
       maxFee: '0.000012'
@@ -784,7 +784,7 @@ export default <TestSuite>{
       Account: address,
       Destination: 'rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo',
 
-      // Max amount to send. Use 100 billion XRP to
+      // Max amount to send. Use 100 billion BMC to
       // ensure that we send the full SendMax amount.
       Amount: '100000000000000000',
 
@@ -800,12 +800,12 @@ export default <TestSuite>{
     const response = await api.prepareTransaction(txJSON, localInstructions)
     assertResultMatch(
       response,
-      responses.preparePayment.minAmountXRP,
+      responses.preparePayment.minAmountBMC,
       'prepare'
     )
   },
 
-  'min amount xrp2xrp': async (api, address) => {
+  'min amount bmc2bmc': async (api, address) => {
     const txJSON = {
       TransactionType: 'Payment',
       Account: address,
@@ -820,7 +820,7 @@ export default <TestSuite>{
 
     assertResultMatch(
       response,
-      responses.preparePayment.minAmountXRPXRP,
+      responses.preparePayment.minAmountBMCBMC,
       'prepare'
     )
   },
@@ -851,14 +851,14 @@ export default <TestSuite>{
       ],
       Flags:
         0 |
-        api.txFlags.Payment.NoRippleDirect |
+        api.txFlags.Payment.NoBlocmatrixDirect |
         api.txFlags.Payment.LimitQuality
     }
     const response = await api.prepareTransaction(txJSON, localInstructions)
     assertResultMatch(response, responses.preparePayment.allOptions, 'prepare')
   },
 
-  'fee is capped at default maxFee of 2 XRP (using txJSON.LastLedgerSequence)': async (
+  'fee is capped at default maxFee of 2 BMC (using txJSON.LastLedgerSequence)': async (
     api,
     address
   ) => {
@@ -895,7 +895,7 @@ export default <TestSuite>{
     assertResultMatch(response, expectedResponse, 'prepare')
   },
 
-  'fee is capped at default maxFee of 2 XRP (using instructions.maxLedgerVersion)': async (
+  'fee is capped at default maxFee of 2 BMC (using instructions.maxLedgerVersion)': async (
     api,
     address
   ) => {
@@ -937,14 +937,14 @@ export default <TestSuite>{
   },
 
   // prepareTransaction - Payment
-  'fee is capped to custom maxFeeXRP when maxFee exceeds maxFeeXRP': async (
+  'fee is capped to custom maxFeeBMC when maxFee exceeds maxFeeBMC': async (
     api,
     address
   ) => {
     api._feeCushion = 1000000
-    api._maxFeeXRP = '3'
+    api._maxFeeBMC = '3'
     const localInstructions = {
-      maxFee: '4' // We are testing that this does not matter; fee is still capped to maxFeeXRP
+      maxFee: '4' // We are testing that this does not matter; fee is still capped to maxFeeBMC
     }
 
     const txJSON = {
@@ -982,9 +982,9 @@ export default <TestSuite>{
   // prepareTransaction - Payment
   'fee is capped to maxFee': async (api, address) => {
     api._feeCushion = 1000000
-    api._maxFeeXRP = '5'
+    api._maxFeeBMC = '5'
     const localInstructions = {
-      maxFee: '4' // maxFeeXRP does not matter if maxFee is lower than maxFeeXRP
+      maxFee: '4' // maxFeeBMC does not matter if maxFee is lower than maxFeeBMC
     }
 
     const txJSON = {
@@ -1057,13 +1057,13 @@ export default <TestSuite>{
       {
         Account: address,
         TransactionType: 'PaymentChannelCreate',
-        Amount: '1000000', // 1 XRP in drops. Use a string-encoded integer.
+        Amount: '1000000', // 1 BMC in drops. Use a string-encoded integer.
         Destination: 'rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW',
         SettleDelay: 86400,
         PublicKey:
           '32D2471DB72B27E3310F355BB33E339BF26F8392D5A93D3BC0FC3B566612DA0F0A'
-        // If cancelAfter is used, you must use RippleTime.
-        // You can use `iso8601ToRippleTime()` to convert to RippleTime.
+        // If cancelAfter is used, you must use BlocmatrixTime.
+        // You can use `iso8601ToBlocmatrixTime()` to convert to BlocmatrixTime.
 
         // Other fields are available (but not used in this test),
         // including `sourceTag` and `destinationTag`.
@@ -1081,12 +1081,12 @@ export default <TestSuite>{
     const txJSON = {
       Account: address,
       TransactionType: 'PaymentChannelCreate',
-      Amount: api.xrpToDrops('1'), // or '1000000'
+      Amount: api.bmcToDrops('1'), // or '1000000'
       Destination: 'rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW',
       SettleDelay: 86400,
       // Ensure this is in upper case if it is not already
       PublicKey: '32D2471DB72B27E3310F355BB33E339BF26F8392D5A93D3BC0FC3B566612DA0F0A'.toUpperCase(),
-      CancelAfter: api.iso8601ToRippleTime('2017-02-17T15:04:57Z'),
+      CancelAfter: api.iso8601ToBlocmatrixTime('2017-02-17T15:04:57Z'),
       SourceTag: 11747,
       DestinationTag: 23480
     }
@@ -1109,7 +1109,7 @@ export default <TestSuite>{
       TransactionType: 'PaymentChannelFund',
       Channel:
         'C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198',
-      Amount: api.xrpToDrops('1') // or '1000000'
+      Amount: api.bmcToDrops('1') // or '1000000'
     }
     const response = await api.prepareTransaction(txJSON, localInstructions)
     assertResultMatch(
@@ -1125,8 +1125,8 @@ export default <TestSuite>{
       TransactionType: 'PaymentChannelFund',
       Channel:
         'C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198',
-      Amount: api.xrpToDrops('1'), // or '1000000'
-      Expiration: api.iso8601ToRippleTime('2017-02-17T15:04:57Z')
+      Amount: api.bmcToDrops('1'), // or '1000000'
+      Expiration: api.iso8601ToBlocmatrixTime('2017-02-17T15:04:57Z')
     }
 
     const response = await api.prepareTransaction(txJSON)
@@ -1170,8 +1170,8 @@ export default <TestSuite>{
       TransactionType: 'PaymentChannelClaim',
       Channel:
         'C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198',
-      Balance: api.xrpToDrops('1'), // or '1000000'
-      Amount: api.xrpToDrops('1'), // or '1000000'
+      Balance: api.bmcToDrops('1'), // or '1000000'
+      Amount: api.bmcToDrops('1'), // or '1000000'
       Signature:
         '30440220718D264EF05CAED7C781FF6DE298DCAC68D002562C9BF3A07C1E721B420C0DAB02203A5A4779EF4D2CCC7BC3EF886676D803A9981B928D3B8ACA483B80ECA3CD7B9B',
       PublicKey:
@@ -1199,8 +1199,8 @@ export default <TestSuite>{
       TransactionType: 'PaymentChannelClaim',
       Channel:
         'C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198',
-      Balance: api.xrpToDrops('1'), // or 1000000
-      Amount: api.xrpToDrops('1'), // or 1000000
+      Balance: api.bmcToDrops('1'), // or 1000000
+      Amount: api.bmcToDrops('1'), // or 1000000
       Signature:
         '30440220718D264EF05CAED7C781FF6DE298DCAC68D002562C9BF3A07C1E721B420C0DAB02203A5A4779EF4D2CCC7BC3EF886676D803A9981B928D3B8ACA483B80ECA3CD7B9B',
       PublicKey:

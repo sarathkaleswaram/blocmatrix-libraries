@@ -1,0 +1,11 @@
+.vscode
+node_modules
+
+.gitignore
+ci.sh
+eslintrc
+
+Gulpfile.js
+
+package-lock.json
+yarn.lock

@@ -12,7 +12,7 @@ module.exports = {
   },
   preparePayment: {
     normal: require('./prepare-payment'),
-    minAmountXRP: require('./prepare-payment-min-xrp'),
+    minAmountBMC: require('./prepare-payment-min-bmc'),
     minAmount: require('./prepare-payment-min'),
     wrongAddress: require('./prepare-payment-wrong-address'),
     wrongAmount: require('./prepare-payment-wrong-amount'),
@@ -83,8 +83,8 @@ module.exports = {
   getPaths: {
     normal: require('./getpaths/normal'),
     UsdToUsd: require('./getpaths/usd2usd'),
-    XrpToXrp: require('./getpaths/xrp2xrp'),
-    XrpToXrpNotEnough: require('./getpaths/xrp2xrp-not-enough'),
+    BmcToBmc: require('./getpaths/bmc2bmc'),
+    BmcToBmcNotEnough: require('./getpaths/bmc2bmc-not-enough'),
     NotAcceptCurrency: require('./getpaths/not-accept-currency'),
     NoPaths: require('./getpaths/no-paths'),
     NoPathsSource: require('./getpaths/no-paths-source-amount'),
@@ -95,7 +95,7 @@ module.exports = {
   },
   getOrderbook: {
     normal: require('./get-orderbook'),
-    withXRP: require('./get-orderbook-with-xrp')
+    withBMC: require('./get-orderbook-with-bmc')
   },
   computeLedgerHash: {
     header: require('./compute-ledger-hash'),

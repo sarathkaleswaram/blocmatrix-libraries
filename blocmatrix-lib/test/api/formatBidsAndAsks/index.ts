@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import assert from 'assert-diff'
-import {RippleAPI} from 'ripple-api'
+import {BlocmatrixAPI} from 'blocmatrix-api'
 import requests from '../../fixtures/requests'
 import responses from '../../fixtures/responses'
 import {TestSuite} from '../../utils'
@@ -59,15 +59,15 @@ export default <TestSuite>{
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
         limit: 20,
         taker: address
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
         limit: 20,
         taker: address
@@ -81,7 +81,7 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])
@@ -89,28 +89,28 @@ export default <TestSuite>{
     })
   },
 
-  'with XRP': async (api, address) => {
+  'with BMC': async (api, address) => {
     const orderbookInfo = {
       base: {
         currency: 'USD',
         counterparty: 'rp8rJYTpodf8qbSCHVTNacf8nSW8mRakFw'
       },
       counter: {
-        currency: 'XRP'
+        currency: 'BMC'
       }
     }
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
         limit: 20,
         taker: address
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
         limit: 20,
         taker: address
@@ -124,19 +124,19 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])
-      assert.deepEqual(orderbook, responses.getOrderbook.withXRP)
+      assert.deepEqual(orderbook, responses.getOrderbook.withBMC)
     })
   },
 
-  'sample XRP/JPY book has orders sorted correctly': async (api, address) => {
+  'sample BMC/JPY book has orders sorted correctly': async (api, address) => {
     const orderbookInfo = {
       base: {
         // the first currency in pair
-        currency: 'XRP'
+        currency: 'BMC'
       },
       counter: {
         currency: 'JPY',
@@ -148,17 +148,17 @@ export default <TestSuite>{
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
-        limit: 400, // must match `test/fixtures/rippled/requests/1-taker_gets-XRP-taker_pays-JPY.json`
+        limit: 400, // must match `test/fixtures/blocmatrixd/requests/1-taker_gets-BMC-taker_pays-JPY.json`
         taker: myAddress
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
-        limit: 400, // must match `test/fixtures/rippled/requests/2-taker_gets-JPY-taker_pays-XRP.json`
+        limit: 400, // must match `test/fixtures/blocmatrixd/requests/2-taker_gets-JPY-taker_pays-BMC.json`
         taker: myAddress
       })
     ]).then(([directOfferResults, reverseOfferResults]) => {
@@ -170,7 +170,7 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])
@@ -179,9 +179,9 @@ export default <TestSuite>{
     })
   },
 
-  'sample USD/XRP book has orders sorted correctly': async (api, address) => {
+  'sample USD/BMC book has orders sorted correctly': async (api, address) => {
     const orderbookInfo = {
-      counter: {currency: 'XRP'},
+      counter: {currency: 'BMC'},
       base: {
         currency: 'USD',
         counterparty: 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
@@ -192,17 +192,17 @@ export default <TestSuite>{
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
-        limit: 400, // must match `test/fixtures/rippled/requests/1-taker_gets-XRP-taker_pays-JPY.json`
+        limit: 400, // must match `test/fixtures/blocmatrixd/requests/1-taker_gets-BMC-taker_pays-JPY.json`
         taker: myAddress
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
-        limit: 400, // must match `test/fixtures/rippled/requests/2-taker_gets-JPY-taker_pays-XRP.json`
+        limit: 400, // must match `test/fixtures/blocmatrixd/requests/2-taker_gets-JPY-taker_pays-BMC.json`
         taker: myAddress
       })
     ]).then(([directOfferResults, reverseOfferResults]) => {
@@ -214,7 +214,7 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])
@@ -239,15 +239,15 @@ export default <TestSuite>{
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
         limit: 20,
         taker: address
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
         limit: 20,
         taker: address
@@ -261,7 +261,7 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])
@@ -294,15 +294,15 @@ export default <TestSuite>{
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
         limit: 20,
         taker: address
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
         limit: 20,
         taker: address
@@ -316,7 +316,7 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])
@@ -348,15 +348,15 @@ export default <TestSuite>{
 
     await Promise.all([
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
         ledger_index: 'validated',
         limit: 20,
         taker: address
       }),
       api.request('book_offers', {
-        taker_gets: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
-        taker_pays: RippleAPI.renameCounterpartyToIssuer(orderbookInfo.base),
+        taker_gets: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.counter),
+        taker_pays: BlocmatrixAPI.renameCounterpartyToIssuer(orderbookInfo.base),
         ledger_index: 'validated',
         limit: 20,
         taker: address
@@ -370,7 +370,7 @@ export default <TestSuite>{
         ? reverseOfferResults.offers
         : []
       ).reduce((acc, res) => acc.concat(res), [])
-      const orderbook = RippleAPI.formatBidsAndAsks(orderbookInfo, [
+      const orderbook = BlocmatrixAPI.formatBidsAndAsks(orderbookInfo, [
         ...directOffers,
         ...reverseOffers
       ])

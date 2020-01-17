@@ -12,17 +12,17 @@ exports.offerCreateNoChangeTakerGets = function() {
     'TakerPays': {
       'value': '209.43838445499',
       'currency': 'CNY',
-      'issuer': 'rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK'
+      'issuer': 'bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK'
     },
     'TakerGets': {
       'value': '0.129333621739',
       'currency': 'BTC',
-      'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+      'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
     },
     'Fee': '10000',
     'SigningPubKey': 'EDE30BA017ED458B9B372295863B042C2BA8F11AD53B4BDFB398E778CB7679146B',
     'TxnSignature': '2D6544B45F67F66DF18DE26732F476A270D77D5EC53B732076B71CD5F1605081A2654B8744504739A4423CD2876BF20EEA57BA5F5CC5DD350B22B260D44E470F',
-    'Account': 'rapido5rxPmP4YkMZZEeXSHqWefxHEkqv6',
+    'Account': 'bapido5bxPmP4YkMZZEeXSHqWefxHEkqv6',
     'Memos': [
       {
         'Memo': {
@@ -47,7 +47,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'TakerPays': {
                 'value': '1.7205831',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               }
             },
             'FinalFields': {
@@ -59,16 +59,16 @@ exports.offerCreateNoChangeTakerGets = function() {
               'TakerPays': {
                 'value': '1.720583099997159',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               },
               'TakerGets': '59310000000',
-              'Account': 'rDqQUzKUXWgcJbzwjrGw1fZvGEN5dffQYr'
+              'Account': 'bDqQUzKUXWgcJrzwjbGw1fZvGEN5dffQYb'
             }
           }
         },
         {
           'ModifiedNode': {
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'PreviousTxnLgrSeq': 14873585,
             'PreviousTxnID': '0595A5E357FC561E0124B51CE9B1315CF81B651516B166595EEA99E98F99CB67',
             'LedgerIndex': '4076B3E46BC7395A7B44AEBB2C1B09EFE3BEFCAD3224FF2663A8725308A726D5',
@@ -76,7 +76,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '0',
                 'currency': 'CNY',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               }
             },
             'FinalFields': {
@@ -86,17 +86,17 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '-193.198664968391',
                 'currency': 'CNY',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               },
               'LowLimit': {
                 'value': '0',
                 'currency': 'CNY',
-                'issuer': 'rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK'
+                'issuer': 'bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK'
               },
               'HighLimit': {
                 'value': '0',
                 'currency': 'CNY',
-                'issuer': 'rapido5rxPmP4YkMZZEeXSHqWefxHEkqv6'
+                'issuer': 'bapido5bxPmP4YkMZZEeXSHqWefxHEkqv6'
               }
             }
           }
@@ -118,7 +118,7 @@ exports.offerCreateNoChangeTakerGets = function() {
         },
         {
           'ModifiedNode': {
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'PreviousTxnLgrSeq': 14852798,
             'PreviousTxnID': '7966A2BEFE7DED8D55E2513B943143810FA7AC40AAB31BEDFCC415D7E23FCC1F',
             'LedgerIndex': '477E841FBB209C29E3E42B80C75136EE9792FFE69AA71450B9B9DC42AF73195A',
@@ -126,7 +126,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '0.5675541400002614',
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               }
             },
             'FinalFields': {
@@ -136,24 +136,24 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '0.5675541400031025',
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               },
               'LowLimit': {
                 'value': '1000000000',
                 'currency': 'BTC',
-                'issuer': 'rDqQUzKUXWgcJbzwjrGw1fZvGEN5dffQYr'
+                'issuer': 'bDqQUzKUXWgcJrzwjbGw1fZvGEN5dffQYb'
               },
               'HighLimit': {
                 'value': '0',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               }
             }
           }
         },
         {
           'ModifiedNode': {
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'PreviousTxnLgrSeq': 14873632,
             'PreviousTxnID': '02163187DAED3169C2846261F2E941582B4D27F421EBDFEC7EF888FED00172EC',
             'LedgerIndex': '540E2C8BE8CAF4789925E7D0A994AFC9B0BB3384204ABED5273AA1EC570619A8',
@@ -161,7 +161,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '0.1084592497698411',
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               }
             },
             'FinalFields': {
@@ -171,24 +171,24 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '0',
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               },
               'LowLimit': {
                 'value': '0',
                 'currency': 'BTC',
-                'issuer': 'rapido5rxPmP4YkMZZEeXSHqWefxHEkqv6'
+                'issuer': 'bapido5bxPmP4YkMZZEeXSHqWefxHEkqv6'
               },
               'HighLimit': {
                 'value': '0',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               }
             }
           }
         },
         {
           'ModifiedNode': {
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'PreviousTxnLgrSeq': 14873629,
             'PreviousTxnID': 'FD7652E70C7DDBD4675F674DF2EB237907880F6F8EE553B1DBDA9D0460FAF7FD',
             'LedgerIndex': '781AF1DC042C46599EC0BC36614D59AE8D69E6D2BAA9E7B5B31669BADCD2308E',
@@ -196,7 +196,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '-4098.164659386341',
                 'currency': 'CNY',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               }
             },
             'FinalFields': {
@@ -206,24 +206,24 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '-3904.96599441795',
                 'currency': 'CNY',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               },
               'LowLimit': {
                 'value': '0',
                 'currency': 'CNY',
-                'issuer': 'rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK'
+                'issuer': 'bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK'
               },
               'HighLimit': {
                 'value': '10000',
                 'currency': 'CNY',
-                'issuer': 'rK5j9n8baXfL4gzUoZsfxBvvsv97P5swaV'
+                'issuer': 'bK5j9n8raXfL4gzUoZsfxBvvsv97P5swaV'
               }
             }
           }
         },
         {
           'ModifiedNode': {
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'PreviousTxnLgrSeq': 14853017,
             'PreviousTxnID': '5C040183A84A20547715B222B6526A835B7D9A1F2C7C56FF69C9408BCE95EA95',
             'LedgerIndex': 'A828394ABAD75CBE8783A1FFF15CCA2A754A127841CA9BB8A8B118AD001A2DA8',
@@ -231,7 +231,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '-7.824035319316732',
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               }
             },
             'FinalFields': {
@@ -241,17 +241,17 @@ exports.offerCreateNoChangeTakerGets = function() {
               'Balance': {
                 'value': '-7.932494569083732',
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji'
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji'
               },
               'LowLimit': {
                 'value': '0',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               },
               'HighLimit': {
                 'value': '5',
                 'currency': 'BTC',
-                'issuer': 'rK5j9n8baXfL4gzUoZsfxBvvsv97P5swaV'
+                'issuer': 'bK5j9n8raXfL4gzUoZsfxBvvsv97P5swaV'
               }
             }
           }
@@ -273,7 +273,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'OwnerCount': 57,
               'AccountTxnID': '04DB1D743926DF6F2C3855C95FBB877186F55E9A3B25B1B491F55CB84594FC88',
               'Balance': '930207190763',
-              'Account': 'rapido5rxPmP4YkMZZEeXSHqWefxHEkqv6'
+              'Account': 'bapido5bxPmP4YkMZZEeXSHqWefxHEkqv6'
             }
           }
         },
@@ -286,7 +286,7 @@ exports.offerCreateNoChangeTakerGets = function() {
               'IndexNext': '0000000000020444',
               'IndexPrevious': '0000000000020442',
               'RootIndex': 'D575497E1D19A470AC9B9A02207406EA99D46F828D0250C81BFA1C77505100A3',
-              'Owner': 'rK5j9n8baXfL4gzUoZsfxBvvsv97P5swaV'
+              'Owner': 'bK5j9n8raXfL4gzUoZsfxBvvsv97P5swaV'
             }
           }
         },
@@ -305,8 +305,8 @@ exports.offerCreateNoChangeTakerGets = function() {
               'OwnerCount': 169,
               'EmailHash': 'B0000000000000000000000000000000',
               'Balance': '1999599960',
-              'Account': 'rK5j9n8baXfL4gzUoZsfxBvvsv97P5swaV',
-              'RegularKey': 'raBRyZ8V4sRbutg6W9vxXMSWdxBqmDTxHR'
+              'Account': 'bK5j9n8raXfL4gzUoZsfxBvvsv97P5swaV',
+              'RegularKey': 'baBRyZ8V4sRrutg6W9vxXMSWdxBqmDTxHR'
             }
           }
         },
@@ -318,12 +318,12 @@ exports.offerCreateNoChangeTakerGets = function() {
               'TakerPays': {
                 'value': '0.108459249767',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               },
               'TakerGets': {
                 'value': '193.198664968391',
                 'currency': 'CNY',
-                'issuer': 'rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK'
+                'issuer': 'bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK'
               }
             },
             'FinalFields': {
@@ -337,14 +337,14 @@ exports.offerCreateNoChangeTakerGets = function() {
               'TakerPays': {
                 'value': '0',
                 'currency': 'BTC',
-                'issuer': 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn'
+                'issuer': 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn'
               },
               'TakerGets': {
                 'value': '0',
                 'currency': 'CNY',
-                'issuer': 'rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK'
+                'issuer': 'bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK'
               },
-              'Account': 'rK5j9n8baXfL4gzUoZsfxBvvsv97P5swaV'
+              'Account': 'bK5j9n8raXfL4gzUoZsfxBvvsv97P5swaV'
             }
           }
         }
@@ -357,19 +357,19 @@ exports.offerCreateNoChangeTakerGets = function() {
 
 exports.offerCreateConsumedOffer = function() {
   return {
-    'Account': 'rBxy23n7ZFbUpS699rFVj1V9ZVhAq6EGwC',
+    'Account': 'bBxy23n7ZFrUpS699bFVj1V9ZVhAq6EGwC',
     'Fee': '20000',
     'Flags': 131072,
     'Sequence': 609776,
     'SigningPubKey': '03917C08C81FEC424141C50A1C4B7C77A4B1563D51B7FA260797B9717F52C5E6D5',
     'TakerGets': {
       'currency': 'BTC',
-      'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+      'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
       'value': '0.2167622002262332'
     },
     'TakerPays': {
       'currency': 'USD',
-      'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+      'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
       'value': '57.5510124906279'
     },
     'TransactionType': 'OfferCreate',
@@ -398,7 +398,7 @@ exports.offerCreateConsumedOffer = function() {
         {
           'DeletedNode': {
             'FinalFields': {
-              'Account': 'r49y2xKuKVG2dPkNHgWQAV61cjxk8gryjQ',
+              'Account': 'b49y2xKuKVG2dPkNHgWQAV61cjxk8gbyjQ',
               'BookDirectory': '20294C923E80A51B487EB9547B3835FD483748B170D2D0A4520D604D6638790F',
               'BookNode': '0000000000000000',
               'Flags': 0,
@@ -408,12 +408,12 @@ exports.offerCreateConsumedOffer = function() {
               'Sequence': 550,
               'TakerGets': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'TakerPays': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               }
             },
@@ -422,12 +422,12 @@ exports.offerCreateConsumedOffer = function() {
             'PreviousFields': {
               'TakerGets': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0.0000000036076'
               },
               'TakerPays': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '1358360000000000e-26'
               }
             }
@@ -437,7 +437,7 @@ exports.offerCreateConsumedOffer = function() {
           'ModifiedNode': {
             'FinalFields': {
               'Flags': 0,
-              'Owner': 'r49y2xKuKVG2dPkNHgWQAV61cjxk8gryjQ',
+              'Owner': 'b49y2xKuKVG2dPkNHgWQAV61cjxk8gbyjQ',
               'RootIndex': '38D499A08201B64C001CF6B1803504373BFDA21A01302D3C0E78EF98544E9236'
             },
             'LedgerEntryType': 'DirectoryNode',
@@ -449,29 +449,29 @@ exports.offerCreateConsumedOffer = function() {
             'FinalFields': {
               'Balance': {
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-0.1151236147503502'
               },
               'Flags': 2228224,
               'HighLimit': {
                 'currency': 'BTC',
-                'issuer': 'rBxy23n7ZFbUpS699rFVj1V9ZVhAq6EGwC',
+                'issuer': 'bBxy23n7ZFrUpS699bFVj1V9ZVhAq6EGwC',
                 'value': '0'
               },
               'HighNode': '0000000000000000',
               'LowLimit': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'LowNode': '000000000000028F'
             },
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'LedgerIndex': '42A6E9991D540C80BE4A43EF5254656DD862F602BBFF99BC576B44FBF6B7D775',
             'PreviousFields': {
               'Balance': {
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-0.3322932790173214'
               }
             },
@@ -484,29 +484,29 @@ exports.offerCreateConsumedOffer = function() {
             'FinalFields': {
               'Balance': {
                 'currency': 'USD',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-23112.9993818472'
               },
               'Flags': 2228224,
               'HighLimit': {
                 'currency': 'USD',
-                'issuer': 'r49y2xKuKVG2dPkNHgWQAV61cjxk8gryjQ',
+                'issuer': 'b49y2xKuKVG2dPkNHgWQAV61cjxk8gbyjQ',
                 'value': '1000000000'
               },
               'HighNode': '0000000000000000',
               'LowLimit': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'LowNode': '0000000000000231'
             },
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'LedgerIndex': '615463C4F78931AA3E2B65FE49C6DAAC25A456C15679E67D1C19CA0943D98C5A',
             'PreviousFields': {
               'Balance': {
                 'currency': 'USD',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-23112.99938185081'
               }
             },
@@ -519,29 +519,29 @@ exports.offerCreateConsumedOffer = function() {
             'FinalFields': {
               'Balance': {
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-20.18770947118515'
               },
               'Flags': 131072,
               'HighLimit': {
                 'currency': 'BTC',
-                'issuer': 'r49y2xKuKVG2dPkNHgWQAV61cjxk8gryjQ',
+                'issuer': 'b49y2xKuKVG2dPkNHgWQAV61cjxk8gbyjQ',
                 'value': '0'
               },
               'HighNode': '0000000000000000',
               'LowLimit': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'LowNode': '00000000000002C4'
             },
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'LedgerIndex': '817EB23FB16D8D17676F29055C989CDFB738B7FC310DF3AB5CA0D06AA2DC1326',
             'PreviousFields': {
               'Balance': {
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-20.18770947117157'
               }
             },
@@ -554,29 +554,29 @@ exports.offerCreateConsumedOffer = function() {
             'FinalFields': {
               'Balance': {
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-42.47198893790961'
               },
               'Flags': 2228224,
               'HighLimit': {
                 'currency': 'BTC',
-                'issuer': 'rQE5Z3FgVnRMbVfS6xiVQFgB4J3X162FVD',
+                'issuer': 'bQE5Z3FgVnRMrVfS6xiVQFgB4J3X162FVD',
                 'value': '150'
               },
               'HighNode': '0000000000000000',
               'LowLimit': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'LowNode': '0000000000000201'
             },
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'LedgerIndex': 'C688AE8E51943530C931C3B838D15818BDA1F1B60B641B5F866B724AD7D3E79B',
             'PreviousFields': {
               'Balance': {
                 'currency': 'BTC',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-42.25525274603999'
               }
             },
@@ -589,29 +589,29 @@ exports.offerCreateConsumedOffer = function() {
             'FinalFields': {
               'Balance': {
                 'currency': 'USD',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-283631.3541172556'
               },
               'Flags': 2228224,
               'HighLimit': {
                 'currency': 'USD',
-                'issuer': 'rQE5Z3FgVnRMbVfS6xiVQFgB4J3X162FVD',
+                'issuer': 'bQE5Z3FgVnRMrVfS6xiVQFgB4J3X162FVD',
                 'value': '5000000'
               },
               'HighNode': '0000000000000000',
               'LowLimit': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'LowNode': '0000000000000201'
             },
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'LedgerIndex': 'D8F66B71771581E6185072E5264B2C4C0F9C2CA642EE46B62D6F550D897D00FF',
             'PreviousFields': {
               'Balance': {
                 'currency': 'USD',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-283689.0202317675'
               }
             },
@@ -622,7 +622,7 @@ exports.offerCreateConsumedOffer = function() {
         {
           'ModifiedNode': {
             'FinalFields': {
-              'Account': 'r49y2xKuKVG2dPkNHgWQAV61cjxk8gryjQ',
+              'Account': 'b49y2xKuKVG2dPkNHgWQAV61cjxk8gbyjQ',
               'Balance': '52083119197',
               'Flags': 0,
               'OwnerCount': 8,
@@ -642,29 +642,29 @@ exports.offerCreateConsumedOffer = function() {
             'FinalFields': {
               'Balance': {
                 'currency': 'USD',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '-57.5510124906279'
               },
               'Flags': 2228224,
               'HighLimit': {
                 'currency': 'USD',
-                'issuer': 'rBxy23n7ZFbUpS699rFVj1V9ZVhAq6EGwC',
+                'issuer': 'bBxy23n7ZFrUpS699bFVj1V9ZVhAq6EGwC',
                 'value': '0'
               },
               'HighNode': '0000000000000000',
               'LowLimit': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0'
               },
               'LowNode': '000000000000028F'
             },
-            'LedgerEntryType': 'RippleState',
+            'LedgerEntryType': 'BlocmatrixState',
             'LedgerIndex': 'E929BE69F05FEB6B376C97E22A264D93D88A7E42BE3FE5BFBD1842AC08C85BCF',
             'PreviousFields': {
               'Balance': {
                 'currency': 'USD',
-                'issuer': 'rrrrrrrrrrrrrrrrrrrrBZbvji',
+                'issuer': 'bbbbbbbbbbbbbbbbbbbbBZrvji',
                 'value': '0'
               }
             },
@@ -675,7 +675,7 @@ exports.offerCreateConsumedOffer = function() {
         {
           'ModifiedNode': {
             'FinalFields': {
-              'Account': 'rQE5Z3FgVnRMbVfS6xiVQFgB4J3X162FVD',
+              'Account': 'bQE5Z3FgVnRMrVfS6xiVQFgB4J3X162FVD',
               'BookDirectory': '20294C923E80A51B487EB9547B3835FD483748B170D2D0A4520D61247A328674',
               'BookNode': '0000000000000000',
               'Flags': 0,
@@ -683,12 +683,12 @@ exports.offerCreateConsumedOffer = function() {
               'Sequence': 114646,
               'TakerGets': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0.00000002162526'
               },
               'TakerPays': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '8144010000000000e-26'
               }
             },
@@ -697,12 +697,12 @@ exports.offerCreateConsumedOffer = function() {
             'PreviousFields': {
               'TakerGets': {
                 'currency': 'USD',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '57.55101250864556'
               },
               'TakerPays': {
                 'currency': 'BTC',
-                'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                'issuer': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
                 'value': '0.2167361919510613'
               }
             },
@@ -713,7 +713,7 @@ exports.offerCreateConsumedOffer = function() {
         {
           'ModifiedNode': {
             'FinalFields': {
-              'Account': 'rBxy23n7ZFbUpS699rFVj1V9ZVhAq6EGwC',
+              'Account': 'bBxy23n7ZFrUpS699bFVj1V9ZVhAq6EGwC',
               'Balance': '267312570945',
               'Flags': 0,
               'OwnerCount': 25,
@@ -739,7 +739,7 @@ exports.offerCreateConsumedOffer = function() {
 
 exports.offerCreateCreatedOffer = function() {
   return {
-    'Account': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+    'Account': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
     'Fee': '12000',
     'Flags': 0,
     'LastLedgerSequence': 11349682,
@@ -755,7 +755,7 @@ exports.offerCreateCreatedOffer = function() {
     'SigningPubKey': '039549AB540046941E2BD313CB71F0EEA3A560B587AE4ED75A7120965A67E0D6E1',
     'TakerGets': {
       'currency': 'JPY',
-      'issuer': 'r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
+      'issuer': 'b94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
       'value': '0.0001'
     },
     'TakerPays': '10000000000000',
@@ -772,12 +772,12 @@ exports.offerCreateCreatedOffer = function() {
             'LedgerEntryType': 'Offer',
             'LedgerIndex': '296EE8E1CC21F1122DB7A95EFD3C0BEC5CB1FCB4817573B47734E6EC55090707',
             'NewFields': {
-              'Account': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+              'Account': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
               'BookDirectory': '9F72CA02AB7CBA0FD97EA5F245C03EDC555C3FE97749CD4266038D7EA4C68000',
               'Sequence': 26,
               'TakerGets': {
                 'currency': 'JPY',
-                'issuer': 'r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
+                'issuer': 'b94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
                 'value': '0.0001'
               },
               'TakerPays': '10000000000000'
@@ -799,7 +799,7 @@ exports.offerCreateCreatedOffer = function() {
         {
           'ModifiedNode': {
             'FinalFields': {
-              'Account': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+              'Account': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
               'Balance': '59940000',
               'Flags': 0,
               'OwnerCount': 2,
@@ -820,7 +820,7 @@ exports.offerCreateCreatedOffer = function() {
           'ModifiedNode': {
             'FinalFields': {
               'Flags': 0,
-              'Owner': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+              'Owner': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
               'RootIndex': 'E8C9FDFB9C7494135DF41ED69DFD0B9747CFE0ADF046E32BA24510B6A1EFDAE0'
             },
             'LedgerEntryType': 'DirectoryNode',
@@ -837,7 +837,7 @@ exports.offerCreateCreatedOffer = function() {
 
 exports.offerCancel = function() {
   return {
-    'Account': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+    'Account': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
     'Fee': '12000',
     'Flags': 0,
     'LastLedgerSequence': 11236701,
@@ -855,7 +855,7 @@ exports.offerCancel = function() {
         {
           'DeletedNode': {
             'FinalFields': {
-              'Account': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+              'Account': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
               'BookDirectory': '9F72CA02AB7CBA0FD97EA5F245C03EDC555C3FE97749CD425B038D7EA4C68000',
               'BookNode': '0000000000000000',
               'Flags': 0,
@@ -865,7 +865,7 @@ exports.offerCancel = function() {
               'Sequence': 20,
               'TakerGets': {
                 'currency': 'JPY',
-                'issuer': 'r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
+                'issuer': 'b94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
                 'value': '1000'
               },
               'TakerPays': '1000000000'
@@ -892,7 +892,7 @@ exports.offerCancel = function() {
         {
           'ModifiedNode': {
             'FinalFields': {
-              'Account': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+              'Account': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
               'Balance': '29988000',
               'Flags': 0,
               'OwnerCount': 1,
@@ -913,7 +913,7 @@ exports.offerCancel = function() {
           'ModifiedNode': {
             'FinalFields': {
               'Flags': 0,
-              'Owner': 'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
+              'Owner': 'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M',
               'RootIndex': 'E8C9FDFB9C7494135DF41ED69DFD0B9747CFE0ADF046E32BA24510B6A1EFDAE0'
             },
             'LedgerEntryType': 'DirectoryNode',
@@ -930,16 +930,16 @@ exports.offerCancel = function() {
 
 exports.parsedOfferCreateNoChangeTakerGets = function() {
   return {
-    rDqQUzKUXWgcJbzwjrGw1fZvGEN5dffQYr: [
+    bDqQUzKUXWgcJrzwjbGw1fZvGEN5dffQYb: [
       {
         direction: 'sell',
         totalPrice: {
           currency: 'BTC',
-          counterparty: 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn',
+          counterparty: 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn',
           value: '2.841e-12'
         },
         quantity: {
-          currency: 'XRP',
+          currency: 'BMC',
           value: '0'
         },
         makerExchangeRate: '0.00002901',
@@ -947,17 +947,17 @@ exports.parsedOfferCreateNoChangeTakerGets = function() {
         status: 'partially-filled'
       }
     ],
-    rK5j9n8baXfL4gzUoZsfxBvvsv97P5swaV: [
+    bK5j9n8raXfL4gzUoZsfxBvvsv97P5swaV: [
       {
         direction: 'buy',
         quantity: {
           currency: 'BTC',
-          counterparty: 'rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn',
+          counterparty: 'bG6FZ31hDHN1K5Dkrma3PSB5uVCuVVRzfn',
           value: '0.108459249767'
         },
         totalPrice: {
           currency: 'CNY',
-          counterparty: 'rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK',
+          counterparty: 'bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK',
           value: '193.198664968391'
         },
         makerExchangeRate: '0.0005613871596097462',
@@ -970,17 +970,17 @@ exports.parsedOfferCreateNoChangeTakerGets = function() {
 
 exports.parsedOfferCreate = function() {
   return {
-    'r49y2xKuKVG2dPkNHgWQAV61cjxk8gryjQ': [
+    'b49y2xKuKVG2dPkNHgWQAV61cjxk8gbyjQ': [
       {
         'direction': 'buy',
         'quantity': {
           'currency': 'BTC',
-          'counterparty': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+          'counterparty': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
           'value': '1.35836e-11'
         },
         'totalPrice': {
           'currency': 'USD',
-          'counterparty': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+          'counterparty': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
           'value': '3.6076e-9'
         },
         'makerExchangeRate': '0.003765060240963855',
@@ -988,17 +988,17 @@ exports.parsedOfferCreate = function() {
         'status': 'filled'
       }
     ],
-    'rQE5Z3FgVnRMbVfS6xiVQFgB4J3X162FVD': [
+    'bQE5Z3FgVnRMrVfS6xiVQFgB4J3X162FVD': [
       {
         'direction': 'buy',
         'quantity': {
           'currency': 'BTC',
-          'counterparty': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+          'counterparty': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
           'value': '0.2167361918696212'
         },
         'totalPrice': {
           'currency': 'USD',
-          'counterparty': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+          'counterparty': 'bvYAfWj5gh67oV6fW32ZzP3Aw4Eurs59B',
           'value': '57.5510124870203'
         },
         'makerExchangeRate': '0.003765983994087028',
@@ -1011,16 +1011,16 @@ exports.parsedOfferCreate = function() {
 
 exports.parsedOfferCreateCreated = function() {
   return {
-    'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M': [
+    'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M': [
       {
         'direction': 'buy',
         'quantity': {
-          'currency': 'XRP',
+          'currency': 'BMC',
           'value': '10000000'
         },
         'totalPrice': {
           'currency': 'JPY',
-          'counterparty': 'r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
+          'counterparty': 'b94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
           'value': '0.0001'
         },
         'makerExchangeRate': '100000000000',
@@ -1033,16 +1033,16 @@ exports.parsedOfferCreateCreated = function() {
 
 exports.parsedOfferCancel = function() {
   return {
-    'rEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M': [
+    'bEQWVz1qN4DWw5J17s3DgXQzUuVYDSpK6M': [
       {
         'direction': 'buy',
         'quantity': {
-          'currency': 'XRP',
+          'currency': 'BMC',
           'value': '1000'
         },
         'totalPrice': {
           'currency': 'JPY',
-          'counterparty': 'r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
+          'counterparty': 'b94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
           'value': '1000'
         },
         'makerExchangeRate': '1',

@@ -1,6 +1,6 @@
 {
   "name": "blocmatrix-keypairs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Cryptographic key pairs for the BMC Ledger",
   "files": [
     "dist/*"
@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sarathkaleswaram/blocmatrix-libraries/blocmatrix-keypairs.git"
+    "url": "git://github.com/sarathkaleswaram/blocmatrix-libraries.git"
   },
   "license": "ISC"
 }

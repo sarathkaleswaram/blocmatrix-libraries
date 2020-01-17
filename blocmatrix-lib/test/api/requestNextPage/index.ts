@@ -1,5 +1,5 @@
 import assert from 'assert-diff'
-import {LedgerData} from 'ripple-api/common/types/objects'
+import {LedgerData} from 'blocmatrix-api/common/types/objects'
 import {assertRejects, TestSuite} from '../../utils'
 
 /**

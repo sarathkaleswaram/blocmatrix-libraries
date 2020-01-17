@@ -3,12 +3,12 @@ import fs from 'fs'
 import * as hashes from '../src/common/hashes'
 
 /**
- * Expects a corresponding ledger dump in $repo/test/fixtures/rippled folder
+ * Expects a corresponding ledger dump in $repo/test/fixtures/blocmatrixd folder
  */
 function createLedgerTest(ledgerIndex: number) {
   describe(String(ledgerIndex), function() {
     var path =
-      __dirname + '/fixtures/rippled/ledger-full-' + ledgerIndex + '.json'
+      __dirname + '/fixtures/blocmatrixd/ledger-full-' + ledgerIndex + '.json'
 
     var ledgerRaw = fs.readFileSync(path, {encoding: 'utf8'})
     var ledgerJSON = JSON.parse(ledgerRaw)
@@ -53,8 +53,8 @@ describe('Ledger', function() {
     })
   })
 
-  describe('calcRippleStateEntryHash', function() {
-    it('will calculate the RippleState entry hash for rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh and rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY in USD', function() {
+  describe('calcBlocmatrixStateEntryHash', function() {
+    it('will calculate the BlocmatrixState entry hash for rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh and rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY in USD', function() {
       var account1 = 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh'
       var account2 = 'rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY'
       var currency = 'USD'
@@ -76,7 +76,7 @@ describe('Ledger', function() {
       assert.equal(actualEntryHash2, expectedEntryHash)
     })
 
-    it('will calculate the RippleState entry hash for r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV and rUAMuQTfVhbfqUDuro7zzy4jj4Wq57MPTj in UAM', function() {
+    it('will calculate the BlocmatrixState entry hash for r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV and rUAMuQTfVhbfqUDuro7zzy4jj4Wq57MPTj in UAM', function() {
       var account1 = 'r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV'
       var account2 = 'rUAMuQTfVhbfqUDuro7zzy4jj4Wq57MPTj'
       var currency = 'UAM'

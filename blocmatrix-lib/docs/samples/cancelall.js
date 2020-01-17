@@ -1,11 +1,11 @@
 'use strict';
-const RippleAPI = require('../../dist/npm').RippleAPI; // require('ripple-lib')
+const BlocmatrixAPI = require('../../dist/npm').BlocmatrixAPI;
 
-const address = 'rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K';
+const address = 'bPhGXpxpCm3nXZw2Gg4kqJ8wM3VkR2wYY';
 const secret = '';
 
-const api = new RippleAPI({server: 'wss://s1.ripple.com:443'});
-const instructions = {maxLedgerVersionOffset: 5};
+const api = new BlocmatrixAPI({ server: 'ws://15.206.171.170:6006' });
+const instructions = { maxLedgerVersionOffset: 5 };
 
 function fail(message) {
   console.error(message);
@@ -14,11 +14,11 @@ function fail(message) {
 
 function cancelOrder(orderSequence) {
   console.log('Cancelling order: ' + orderSequence.toString());
-  return api.prepareOrderCancellation(address, {orderSequence}, instructions)
-  .then(prepared => {
-    const signing = api.sign(prepared.txJSON, secret);
-    return api.submit(signing.signedTransaction);
-  });
+  return api.prepareOrderCancellation(address, { orderSequence }, instructions)
+    .then(prepared => {
+      const signing = api.sign(prepared.txJSON, secret);
+      return api.submit(signing.signedTransaction);
+    });
 }
 
 function cancelAllOrders(orderSequences) {

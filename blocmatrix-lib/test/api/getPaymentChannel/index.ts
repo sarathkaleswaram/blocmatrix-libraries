@@ -27,7 +27,7 @@ export default <TestSuite>{
       'DFA557EA3497585BFE83F0F97CC8E4530BBB99967736BB95225C7F0C13ACE708'
     await assertRejects(
       api.getPaymentChannel(channelId),
-      api.errors.RippledError,
+      api.errors.BlocmatrixdError,
       'entryNotFound'
     )
   },

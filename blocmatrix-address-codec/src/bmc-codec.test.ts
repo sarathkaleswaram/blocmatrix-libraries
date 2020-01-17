@@ -123,8 +123,8 @@ describe('decodeSeed', function() {
   })
 
   it('can decode a secp256k1 seed', function() {
-    const decoded = api.decodeSeed('snoPBbXtMeMyMHUVTgruqAfg1SUTr')
-    expect(toHex(decoded.bytes)).toBe('DEDCE9CE67B451D852FD4E846FCDE31C')
+    const decoded = api.decodeSeed('snoPBbXtMeMyMHUVTgruqAfg1SUTr') // sn259rEFXrQrWyx3Q7XneWcwV6dfL
+    expect(toHex(decoded.bytes)).toBe('DEDCE9CE67B451D852FD4E846FCDE31C') // CF2DE378FBDD7E2EE87D486DFB5A7BFF
     expect(decoded.type).toBe('secp256k1')
   })
 })

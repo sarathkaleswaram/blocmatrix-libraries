@@ -20,14 +20,13 @@
 build/
 distrib/
 tags
-bin/rippled
+bin/blocmatrixd
 Debug/*.*
 Release/*.*
 
 # Ignore locally installed node_modules
 node_modules
 !test/node_modules
-package-lock.json
 
 # Ignore tmp directory.
 tmp
@@ -37,7 +36,7 @@ db/*.db
 db/*.db-*
 
 # Ignore customized configs
-rippled.cfg
+blocmatrixd.cfg
 validators.txt
 test/config.js
 

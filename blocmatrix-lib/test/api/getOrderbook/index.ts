@@ -63,19 +63,19 @@ export default <TestSuite>{
     )
   },
 
-  'with XRP': async (api, address) => {
+  'with BMC': async (api, address) => {
     const response = await api.getOrderbook(
       address,
-      requests.getOrderbook.withXRP
+      requests.getOrderbook.withBMC
     )
-    assertResultMatch(response, responses.getOrderbook.withXRP, 'getOrderbook')
+    assertResultMatch(response, responses.getOrderbook.withBMC, 'getOrderbook')
   },
 
-  'sample XRP/JPY book has orders sorted correctly': async (api, address) => {
+  'sample BMC/JPY book has orders sorted correctly': async (api, address) => {
     const orderbookInfo = {
       base: {
         // the first currency in pair
-        currency: 'XRP'
+        currency: 'BMC'
       },
       counter: {
         currency: 'JPY',
@@ -88,9 +88,9 @@ export default <TestSuite>{
     checkSortingOfOrders(response.asks)
   },
 
-  'sample USD/XRP book has orders sorted correctly': async (api, address) => {
+  'sample USD/BMC book has orders sorted correctly': async (api, address) => {
     const orderbookInfo = {
-      counter: {currency: 'XRP'},
+      counter: {currency: 'BMC'},
       base: {
         currency: 'USD',
         counterparty: 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'

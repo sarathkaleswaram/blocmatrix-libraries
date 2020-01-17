@@ -14,29 +14,29 @@ const {getPaths: RESPONSE_FIXTURES} = responses
 export default <TestSuite>{
   'simple test': async api => {
     const response = await api.getPaths(REQUEST_FIXTURES.normal)
-    assertResultMatch(response, RESPONSE_FIXTURES.XrpToUsd, 'getPaths')
+    assertResultMatch(response, RESPONSE_FIXTURES.BmcToUsd, 'getPaths')
   },
   'queuing': async api => {
-    const [normalResult, usdOnlyResult, xrpOnlyResult] = await Promise.all([
+    const [normalResult, usdOnlyResult, bmcOnlyResult] = await Promise.all([
       api.getPaths(REQUEST_FIXTURES.normal),
       api.getPaths(REQUEST_FIXTURES.UsdToUsd),
-      api.getPaths(REQUEST_FIXTURES.XrpToXrp)
+      api.getPaths(REQUEST_FIXTURES.BmcToBmc)
     ])
-    assertResultMatch(normalResult, RESPONSE_FIXTURES.XrpToUsd, 'getPaths')
+    assertResultMatch(normalResult, RESPONSE_FIXTURES.BmcToUsd, 'getPaths')
     assertResultMatch(usdOnlyResult, RESPONSE_FIXTURES.UsdToUsd, 'getPaths')
-    assertResultMatch(xrpOnlyResult, RESPONSE_FIXTURES.XrpToXrp, 'getPaths')
+    assertResultMatch(bmcOnlyResult, RESPONSE_FIXTURES.BmcToBmc, 'getPaths')
   },
   // @TODO
-  // need decide what to do with currencies/XRP:
-  // if add 'XRP' in currencies, then there will be exception in
-  // xrpToDrops function (called from toRippledAmount)
+  // need decide what to do with currencies/BMC:
+  // if add 'BMC' in currencies, then there will be exception in
+  // bmcToDrops function (called from toBlocmatrixdAmount)
   'getPaths USD 2 USD': async api => {
     const response = await api.getPaths(REQUEST_FIXTURES.UsdToUsd)
     assertResultMatch(response, RESPONSE_FIXTURES.UsdToUsd, 'getPaths')
   },
-  'getPaths XRP 2 XRP': async api => {
-    const response = await api.getPaths(REQUEST_FIXTURES.XrpToXrp)
-    assertResultMatch(response, RESPONSE_FIXTURES.XrpToXrp, 'getPaths')
+  'getPaths BMC 2 BMC': async api => {
+    const response = await api.getPaths(REQUEST_FIXTURES.BmcToBmc)
+    assertResultMatch(response, RESPONSE_FIXTURES.BmcToBmc, 'getPaths')
   },
   'source with issuer': async api => {
     return assertRejects(
@@ -44,9 +44,9 @@ export default <TestSuite>{
       api.errors.NotFoundError
     )
   },
-  'XRP 2 XRP - not enough': async api => {
+  'BMC 2 BMC - not enough': async api => {
     return assertRejects(
-      api.getPaths(REQUEST_FIXTURES.XrpToXrpNotEnough),
+      api.getPaths(REQUEST_FIXTURES.BmcToBmcNotEnough),
       api.errors.NotFoundError
     )
   },
@@ -85,7 +85,7 @@ export default <TestSuite>{
         ...REQUEST_FIXTURES.normal,
         source: {address: addresses.NOTFOUND}
       }),
-      api.errors.RippleError
+      api.errors.BlocmatrixError
     )
   },
   'send all': async api => {

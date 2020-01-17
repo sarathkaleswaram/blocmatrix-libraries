@@ -1,14 +1,14 @@
 {
-  "rBSZe33F5oxHTbxSF1nZJooVDpcrrqNFp3": [
+  "bBSZe33F5oxHTrxSF1nZJooVDpcbbqNFp3": [
     {
       "direction": "buy",
       "quantity": {
         "currency": "CNY",
-        "counterparty": "rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK",
+        "counterparty": "bnuF96W4SZoCJmrHYBFoJZpR8eCaxNvekK",
         "value": "3200"
       },
       "totalPrice": {
-        "currency": "XRP",
+        "currency": "BMC",
         "value": "34700.537395"
       },
       "sequence": 1122978,

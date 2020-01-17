@@ -1,0 +1,11 @@
+.vscode
+examples
+node_modules
+src
+.gitignore
+.travis.yml
+jest.config.js
+package-lock.json
+tsconfig.json
+tslint.json
+yarn.lock

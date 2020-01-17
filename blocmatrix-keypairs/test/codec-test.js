@@ -3,7 +3,7 @@
 'use strict'
 
 const assert = require('assert')
-const api = require('../dist/ripple-address-codec')
+const api = require('../dist/blocmatrix-address-codec')
 
 function toHex(bytes) {
   return Buffer.from(bytes).toString('hex').toUpperCase()
@@ -13,7 +13,7 @@ function toBytes(hex) {
   return Buffer.from(hex, 'hex').toJSON().data
 }
 
-describe('ripple-address-codec', function() {
+describe('blocmatrix-address-codec', function() {
   function makeTest(type, base58, hex) {
     it('can translate between ' + hex + ' and ' + base58 + ' (encode ' + type + ')', function() {
       const actual = api['encode' + type](toBytes(hex))
@@ -25,12 +25,12 @@ describe('ripple-address-codec', function() {
     })
   }
 
-  makeTest('AccountID', 'rJrRMgiRgrU6hDF4pgu5DXQdWyPbY35ErN',
-    'BA8E78626EE42C41B46D46C3048DF3A1C3C87072')
+  makeTest('AccountID', 'bKsa7XNTpJ2oWftVZyqx32sr8K7SCRqkB3', // rMgiRgJrRrU6hDF4pgu5DXQdWyPbY35ErN
+    'C5D7AA79916935FD4287CE8625680C5769DC021D')
 
   makeTest(
     'NodePublic',
-    'n9MXXueo837zYH36DvMc13BwHcqtfAWNJY5czWVbp7uYTj7x17TH',
+    'n9MXXueo837zYH36DvMc13BwHcqtfAWNJY5czWVrp7uYTj7x17TH',
     '0388E5BA87A000CB807240DF8C848EB0B5FFA5C8E5A521BC8E105C0F0A44217828')
 
   it('can decode arbitrary seeds', function() {
@@ -38,8 +38,8 @@ describe('ripple-address-codec', function() {
     assert.equal(toHex(decoded.bytes), '4C3A1D213FBDFB14C7C28D609469B341')
     assert.equal(decoded.type, 'ed25519')
 
-    const decoded2 = api.decodeSeed('sn259rEFXrQrWyx3Q7XneWcwV6dfL')
-    assert.equal(toHex(decoded2.bytes), 'CF2DE378FBDD7E2EE87D486DFB5A7BFF')
+    const decoded2 = api.decodeSeed('snoPBbXtMeMyMHUVTgruqAfg1SUTr') // sn259rEFXrQrWyx3Q7XneWcwV6dfL
+    assert.equal(toHex(decoded2.bytes), 'DEDCE9CE67B451D852FD4E846FCDE31C') // CF2DE378FBDD7E2EE87D486DFB5A7BFF
     assert.equal(decoded2.type, 'secp256k1')
   })
 
@@ -52,13 +52,13 @@ describe('ripple-address-codec', function() {
   })
 
   it('isValidAddress - secp256k1 address valid', function() {
-    assert(api.isValidAddress('rU6K7V3Po4snVhBBaU29sesqs2qTQJWDw1'))
+    assert(api.isValidAddress('bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh'))
   })
   it('isValidAddress - ed25519 address valid', function() {
-    assert(api.isValidAddress('rLUEXYuLiQptky37CqLcm9USQpPiz5rkpD'))
-  })
+    assert(api.isValidAddress('bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh'))
+  }) 
   it('isValidAddress - invalid', function() {
-    assert(!api.isValidAddress('rU6K7V3Po4snVhBBaU29sesqs2qTQJWDw2'))
+    assert(!api.isValidAddress('rHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh'))
   })
   it('isValidAddress - empty', function() {
     assert(!api.isValidAddress(''))

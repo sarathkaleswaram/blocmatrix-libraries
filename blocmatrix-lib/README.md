@@ -1,19 +1,17 @@
-# ripple-lib (RippleAPI)
+# blocmatrix-lib (BlocmatrixAPI)
 
-A JavaScript/TypeScript API for interacting with the XRP Ledger
+A JavaScript/TypeScript API for interacting with the BMC Ledger
 
-[![NPM](https://nodei.co/npm/ripple-lib.png)](https://www.npmjs.org/package/ripple-lib)
+This is the recommended library for integrating a JavaScript/TypeScript app with the BMC Ledger, especially if you intend to use advanced functionality such as IOUs, payment paths, the decentralized exchange, account settings, payment channels, escrows, multi-signing, and more.
 
-This is the recommended library for integrating a JavaScript/TypeScript app with the XRP Ledger, especially if you intend to use advanced functionality such as IOUs, payment paths, the decentralized exchange, account settings, payment channels, escrows, multi-signing, and more.
-
-**What is ripple-lib used for?** Here's a [list of applications](APPLICATIONS.md) that use `ripple-lib`. Open a PR to add your app or project to the list!
+**What is blocmatrix-lib used for?** Here's a [list of applications](APPLICATIONS.md) that use `blocmatrix-lib`. Open a PR to add your app or project to the list!
 
 ### Features
 
-+ Connect to a `rippled` server from Node.js or a web browser
-+ Helpers for creating requests and parsing responses for the [rippled API](https://developers.ripple.com/rippled-api.html)
-+ Listen to events on the XRP Ledger (transactions, ledger, validations, etc.)
-+ Sign and submit transactions to the XRP Ledger
++ Connect to a `blocmatrixd` server from Node.js or a web browser
++ Helpers for creating requests and parsing responses for the blocmatrixd API
++ Listen to events on the BMC Ledger (transactions, ledger, validations, etc.)
++ Sign and submit transactions to the BMC Ledger
 + Type definitions for TypeScript
 
 ### Requirements
@@ -23,26 +21,17 @@ This is the recommended library for integrating a JavaScript/TypeScript app with
 
 ### Install
 
-In an existing project (with `package.json`), install `ripple-lib`:
+In an existing project (with `package.json`), install `blocmatrix-lib`:
 ```
-$ yarn add ripple-lib
+$ yarn add blocmatrix-lib
 ```
-
-## Documentation
-
-+ [RippleAPI Beginners Guide](https://xrpl.org/get-started-with-rippleapi-for-javascript.html)
-+ [RippleAPI Full Reference Documentation](https://xrpl.org/rippleapi-reference.html) ([in this repo](https://github.com/ripple/ripple-lib/blob/develop/docs/index.md))
-+ [Code Samples](https://github.com/ripple/ripple-lib/tree/develop/docs/samples)
 
 ### Mailing Lists
 
-We have a low-traffic mailing list for announcements of new ripple-lib releases. (About 1 email per week)
+We have a low-traffic mailing list for announcements of new blocmatrix-lib releases. (About 1 email per week)
 
-+ [Subscribe to ripple-lib-announce](https://groups.google.com/forum/#!forum/ripple-lib-announce)
+If you're using the BMC Ledger in production, you should run a blocmatrixd server and subscribe to the blocmatrix-server mailing list as well.
 
-If you're using the XRP Ledger in production, you should run a [rippled server](https://github.com/ripple/rippled) and subscribe to the ripple-server mailing list as well.
-
-+ [Subscribe to ripple-server](https://groups.google.com/forum/#!forum/ripple-server)
 
 ## Development
 
@@ -76,11 +65,3 @@ Do not edit `./docs/index.md` directly because it is a generated file.
 Instead, edit the appropriate `.md.ejs` files in `./docs/src/`.
 
 If you make changes to the JSON schemas, fixtures, or documentation sources, update the documentation by running `yarn run docgen`.
-
-## More Information
-
-+ [ripple-lib-announce mailing list](https://groups.google.com/forum/#!forum/ripple-lib-announce) - subscribe for release announcements
-+ [RippleAPI Reference](https://xrpl.org/rippleapi-reference.html) - XRP Ledger Dev Portal
-+ [XRP Ledger Dev Portal](https://xrpl.org/)
-
- [![Build Status](https://travis-ci.org/ripple/ripple-lib.svg?branch=master)](https://travis-ci.org/ripple/ripple-lib)

@@ -13,7 +13,7 @@ export default <TestSuite>{
   },
 
   'submit - failure': async (api, address) => {
-    await assertRejects(api.submit('BAD'), api.errors.RippledError)
+    await assertRejects(api.submit('BAD'), api.errors.BlocmatrixdError)
     // assert.strictEqual(error.data.resultCode, 'temBAD_FEE')
   }
 }

@@ -2,9 +2,9 @@ import _ from 'lodash'
 import net from 'net'
 import assert from 'assert-diff'
 import setupAPI from './setup-api'
-import {RippleAPI} from 'ripple-api'
-import ledgerClose from './fixtures/rippled/ledger-close.json'
-const utils = RippleAPI._PRIVATE.ledgerUtils
+import {BlocmatrixAPI} from 'blocmatrix-api'
+import ledgerClose from './fixtures/blocmatrixd/ledger-close.json'
+const utils = BlocmatrixAPI._PRIVATE.ledgerUtils
 
 const TIMEOUT = 200000 // how long before each test case times out
 const isBrowser = (process as any).browser
@@ -145,7 +145,7 @@ describe('Connection', function() {
 
     // Address where no one listens
     const connection = new utils.common.Connection(
-      'ws://testripple.circleci.com:129'
+      'ws://testblocmatrix.circleci.com:129'
     )
     connection.on('error', done)
     connection.connect().catch(error => {
@@ -265,7 +265,7 @@ describe('Connection', function() {
       }
       this.timeout(70001)
       const self = this
-      self.api.connection.__badUrl = 'ws://testripple.circleci.com:129'
+      self.api.connection.__badUrl = 'ws://testblocmatrix.circleci.com:129'
       function breakConnection() {
         self.api.connection.__doReturnBad()
         self.api.connection._send(
@@ -407,10 +407,10 @@ describe('Connection', function() {
 
   it('connect multiserver error', function() {
     assert.throws(function() {
-      new RippleAPI({
+      new BlocmatrixAPI({
         servers: ['wss://server1.com', 'wss://server2.com']
       } as any)
-    }, this.api.errors.RippleError)
+    }, this.api.errors.BlocmatrixError)
   })
 
   it('connect throws error', function(done) {
@@ -485,9 +485,9 @@ describe('Connection', function() {
     )
   })
 
-  it('propagates RippledError data', function(done) {
+  it('propagates BlocmatrixdError data', function(done) {
     this.api.request('subscribe', {streams: 'validations'}).catch(error => {
-      assert.strictEqual(error.name, 'RippledError')
+      assert.strictEqual(error.name, 'BlocmatrixdError')
       assert.strictEqual(error.data.error, 'invalidParams')
       assert.strictEqual(error.message, 'Invalid parameters.')
       assert.strictEqual(error.data.error_code, 31)
@@ -505,7 +505,7 @@ describe('Connection', function() {
 
   it('unrecognized message type', function(done) {
     // This enables us to automatically support any
-    // new messages added by rippled in the future.
+    // new messages added by blocmatrixd in the future.
     this.api.connection.on('unknown', event => {
       assert.deepEqual(event, {type: 'unknown'})
       done()
@@ -524,7 +524,7 @@ describe('Connection', function() {
   })
 
   it(
-    'should throw RippledNotInitializedError if server does not have ' +
+    'should throw BlocmatrixdNotInitializedError if server does not have ' +
       'validated ledgers',
     function() {
       this.timeout(3000)
@@ -536,15 +536,15 @@ describe('Connection', function() {
         })
       )
 
-      const api = new RippleAPI({server: this.api.connection._url})
+      const api = new BlocmatrixAPI({server: this.api.connection._url})
       return api.connect().then(
         () => {
           assert(false, 'Must have thrown!')
         },
         error => {
           assert(
-            error instanceof this.api.errors.RippledNotInitializedError,
-            'Must throw RippledNotInitializedError, got instead ' +
+            error instanceof this.api.errors.BlocmatrixdNotInitializedError,
+            'Must throw BlocmatrixdNotInitializedError, got instead ' +
               String(error)
           )
         }

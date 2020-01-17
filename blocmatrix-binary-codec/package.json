@@ -1,6 +1,6 @@
 {
   "name": "blocmatrix-binary-codec",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "BMC Ledger binary codec",
   "files": [
     "distrib/npm/*",
@@ -14,6 +14,7 @@
   "dependencies": {
     "babel-runtime": "^6.6.1",
     "base-x": "^3.0.7",
+    "blocmatrix-address-codec": "^1.0.0",
     "bn.js": "^5.1.1",
     "create-hash": "^1.1.2",
     "decimal.js": "^10.2.0",
@@ -37,16 +38,16 @@
     "compile": "babel --optional runtime -d distrib/npm/ src/ && cp src/enums/definitions.json distrib/npm/enums",
     "prepublish": "npm test && npm run lint && npm run compile",
     "test": "istanbul test _mocha",
-    "lint": "if ! [ -f eslintrc ]; then curl -o eslintrc 'https://raw.githubusercontent.com/blocmatrix/javascript-style-guide/es6/eslintrc'; echo 'parser: babel-eslint' >> eslintrc; fi; eslint -c eslintrc src/**/*.js test/*.js examples/*.js"
+    "lint": "if ! [ -f eslintrc ]; then curl -o eslintrc 'https://raw.githubusercontent.com/ripple/javascript-style-guide/es6/eslintrc'; echo 'parser: babel-eslint' >> eslintrc; fi; eslint -c eslintrc src/**/*.js test/*.js examples/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sarathkaleswaram/blocmatrix-libraries/blocmatrix-binary-codec.git"
+    "url": "git://github.com/sarathkaleswaram/blocmatrix-libraries.git"
   },
   "bugs": {
-    "url": "https://github.com/sarathkaleswaram/blocmatrix-libraries/blocmatrix-binary-codec/issues"
+    "url": "https://github.com/sarathkaleswaram/blocmatrix-libraries/issues"
   },
-  "homepage": "https://github.com/sarathkaleswaram/blocmatrix-libraries/blocmatrix-binary-codec#readme",
+  "homepage": "https://github.com/sarathkaleswaram/blocmatrix-libraries#readme",
   "license": "ISC",
   "readmeFilename": "README.md"
 }

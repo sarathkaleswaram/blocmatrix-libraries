@@ -1,5 +1,5 @@
 const port = 34371
-import {createMockRippled} from './mock-rippled'
+import {createMockBlocmatrixd} from './mock-blocmatrixd'
 
 function main() {
   if (global.describe) {
@@ -7,9 +7,9 @@ function main() {
     return
   }
   console.log('starting server on port ' + port)
-  createMockRippled(port)
+  createMockBlocmatrixd(port)
   console.log('starting server on port ' + String(port + 1))
-  createMockRippled(port + 1)
+  createMockBlocmatrixd(port + 1)
 }
 
 main()

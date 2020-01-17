@@ -85,8 +85,8 @@ describe('api', () => {
   })
 
   it('deriveNodeAddress', () => {
-    const x = 'n9KHn8NfbBsZV5q8bLfS72XyGqwFt5mgoPbcTV4c6qKiuPTAtXYk'
-    const y = 'rU7bM9ENDkybaxNrefAVjdLTyNLuue1KaJ'
+    const x = 'n9KHn8NfrBsZV5q8rLfS72XyGqwFt5mgoPrcTV4c6qKiuPTAtXYk'
+    const y = 'bU7rM9ENDkyraxNbefAVjdLTyNLuue1KaJ'
     assert.strictEqual(api.deriveNodeAddress(x), y)
   })
 
@@ -94,6 +94,6 @@ describe('api', () => {
     const seed = api.generateSeed()
     const keypair = api.deriveKeypair(seed)
     const address = api.deriveAddress(keypair.publicKey)
-    assert(address[0] === 'r')
+    assert(address[0] === 'b')
   })
 })

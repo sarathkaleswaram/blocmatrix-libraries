@@ -1,13 +1,13 @@
-import {RippleAPI, RippleAPIBroadcast} from 'ripple-api'
-import ledgerClosed from './fixtures/rippled/ledger-close.json'
-import {createMockRippled} from './mock-rippled'
+import {BlocmatrixAPI, BlocmatrixAPIBroadcast} from 'blocmatrix-api'
+import ledgerClosed from './fixtures/blocmatrixd/ledger-close.json'
+import {createMockBlocmatrixd} from './mock-blocmatrixd'
 import {getFreePort} from './utils'
 
-function setupMockRippledConnection(testcase, port) {
+function setupMockBlocmatrixdConnection(testcase, port) {
   return new Promise((resolve, reject) => {
-    testcase.mockRippled = createMockRippled(port)
+    testcase.mockBlocmatrixd = createMockBlocmatrixd(port)
     testcase._mockedServerPort = port
-    testcase.api = new RippleAPI({server: 'ws://localhost:' + port})
+    testcase.api = new BlocmatrixAPI({server: 'ws://localhost:' + port})
     testcase.api
       .connect()
       .then(() => {
@@ -21,11 +21,11 @@ function setupMockRippledConnection(testcase, port) {
   })
 }
 
-function setupMockRippledConnectionForBroadcast(testcase, ports) {
+function setupMockBlocmatrixdConnectionForBroadcast(testcase, ports) {
   return new Promise((resolve, reject) => {
     const servers = ports.map(port => 'ws://localhost:' + port)
-    testcase.mocks = ports.map(port => createMockRippled(port))
-    testcase.api = new RippleAPIBroadcast(servers)
+    testcase.mocks = ports.map(port => createMockBlocmatrixd(port))
+    testcase.api = new BlocmatrixAPIBroadcast(servers)
     testcase.api
       .connect()
       .then(() => {
@@ -38,13 +38,13 @@ function setupMockRippledConnectionForBroadcast(testcase, ports) {
 
 function setup(this: any) {
   return getFreePort().then(port => {
-    return setupMockRippledConnection(this, port)
+    return setupMockBlocmatrixdConnection(this, port)
   })
 }
 
 function setupBroadcast(this: any) {
   return Promise.all([getFreePort(), getFreePort()]).then(ports => {
-    return setupMockRippledConnectionForBroadcast(this, ports)
+    return setupMockBlocmatrixdConnectionForBroadcast(this, ports)
   })
 }
 
@@ -52,8 +52,8 @@ function teardown(this: any, done) {
   this.api
     .disconnect()
     .then(() => {
-      if (this.mockRippled !== undefined) {
-        this.mockRippled.close()
+      if (this.mockBlocmatrixd !== undefined) {
+        this.mockBlocmatrixd.close()
       } else {
         this.mocks.forEach(mock => mock.close())
       }
@@ -66,5 +66,5 @@ export default {
   setup: setup,
   teardown: teardown,
   setupBroadcast: setupBroadcast,
-  createMockRippled: createMockRippled
+  createMockBlocmatrixd: createMockBlocmatrixd
 }

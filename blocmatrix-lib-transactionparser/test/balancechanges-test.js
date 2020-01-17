@@ -4,19 +4,19 @@ var assert = require('assert-diff')
 var fs = require('fs')
 var parseBalanceChanges = require('../src/index').parseBalanceChanges
 
-// Pay 100 XRP from rKmB to rLDY to create rLDY account
+// Pay 100 BMC from rKmB to rLDY to create rLDY account
 var createAccountBalanceChanges = {
-  rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K: [
+  bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K: [
     {
       value: '100',
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: ''
     }
   ],
-  rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc: [
+  bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc: [
     {
       value: '-100.012',
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: ''
     }
   ]
@@ -24,33 +24,33 @@ var createAccountBalanceChanges = {
 
 // Pay 0.01 USD from rKmB to rLDY where rLDY starts with no USD
 var usdFirstPaymentBalanceChanges = {
-  rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc: [
+  bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc: [
     {
       value: '-0.01',
       currency: 'USD',
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
     },
     {
       value: '-0.012',
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: ''
     }
   ],
-  rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
+  bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
     {
-      counterparty: 'rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc',
+      counterparty: 'bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc',
       currency: 'USD',
       value: '0.01'
     },
     {
-      counterparty: 'rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K',
+      counterparty: 'bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K',
       currency: 'USD',
       value: '-0.01'
     }
   ],
-  rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K: [
+  bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K: [
     {
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q',
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q',
       currency: 'USD',
       value: '0.01'
     }
@@ -59,34 +59,34 @@ var usdFirstPaymentBalanceChanges = {
 
 // Pay 0.2 USD from rLDY to rKmB where rLDY starts with 0.2 USD
 var usdFullPaymentBalanceChanges = {
-  rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc: [
+  bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc: [
     {
       value: '0.2',
       currency: 'USD',
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
     }
   ],
-  rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
+  bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
     {
       value: '-0.2',
       currency: 'USD',
-      counterparty: 'rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc'
+      counterparty: 'bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc'
     },
     {
       value: '0.2',
       currency: 'USD',
-      counterparty: 'rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K'
+      counterparty: 'bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K'
     }
   ],
-  rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K: [
+  bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K: [
     {
       value: '-0.2',
       currency: 'USD',
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
     },
     {
       value: '-0.012',
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: ''
     }
   ]
@@ -98,20 +98,20 @@ var usdPaymentBalanceChanges = usdFirstPaymentBalanceChanges
 // Set trust limit to 200 USD on rLDY when it has a trust limit of 100 USD
 // and has a balance of 0.02 USD
 var setTrustlineBalanceChanges = {
-  rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K: [
+  bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K: [
     {
       value: '-0.012',
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: ''
     }
   ]
 }
 
 var setTrustlineBalanceChanges2 = {
-  rsApBGKJmMfExxZBrGnzxEXyq7TMhMRg4e: [
+  bsApBGKJmMfExxZBbGnzxEXyq7TMhMRg4e: [
     {
       counterparty: '',
-      currency: 'XRP',
+      currency: 'BMC',
       value: '-0.00001'
     }
   ]
@@ -120,21 +120,21 @@ var setTrustlineBalanceChanges2 = {
 // Set trust limit to 100 USD with balance of 10 USD
 // on rLDY when it has no trustline
 var createTrustlineBalanceChanges = {
-  rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K: [
+  bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K: [
     {
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q',
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q',
       currency: 'USD',
       value: '10'
     },
     {
       counterparty: '',
-      currency: 'XRP',
+      currency: 'BMC',
       value: '-0.012'
     }
   ],
-  rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
+  bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
     {
-      counterparty: 'rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K',
+      counterparty: 'bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K',
       currency: 'USD',
       value: '-10'
     }
@@ -145,55 +145,55 @@ var createTrustlineBalanceChanges = {
 // Pay 0.02 USD from rLDY to rKmB when rLDY has a trust limit of 0
 // for USD, but still has a balance of 0.02 USD; which closes the trustline
 var deleteTrustlineBalanceChanges = {
-  rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc: [
+  bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc: [
     {
       value: '0.02',
       currency: 'USD',
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
     }
   ],
-  rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
+  bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q: [
     {
       value: '-0.02',
       currency: 'USD',
-      counterparty: 'rKmBGxocj9Abgy25J51Mk1iqFzW9aVF9Tc'
+      counterparty: 'bKmBGxocj9Argy25J51Mk1iqFzW9aVF9Tc'
     },
     {
       value: '0.02',
       currency: 'USD',
-      counterparty: 'rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K'
+      counterparty: 'bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K'
     }
   ],
-  rLDYrujdKUfVx28T9vRDAbyJ7G2WVXKo4K: [
+  bLDYbujdKUfVx28T9vRDAryJ7G2WVXKo4K: [
     {
       value: '-0.02',
       currency: 'USD',
-      counterparty: 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
+      counterparty: 'bMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q'
     },
     {
       value: '-0.012',
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: ''
     }
   ]
 }
 
 var redeemBalanceChanges = {
-  rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh: [
+  bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh: [
     {
       currency: 'USD',
-      counterparty: 'rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK',
+      counterparty: 'bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK',
       value: '100'
     }
   ],
-  rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK: [
+  bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK: [
     {
       currency: 'USD',
-      counterparty: 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh',
+      counterparty: 'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh',
       value: '-100'
     },
     {
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: '',
       value: '-0.00001'
     }
@@ -201,21 +201,21 @@ var redeemBalanceChanges = {
 }
 
 var redeemThenIssueBalanceChanges = {
-  rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh: [
+  bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh: [
     {
       currency: 'USD',
-      counterparty: 'rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK',
+      counterparty: 'bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK',
       value: '200'
     }
   ],
-  rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK: [
+  bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK: [
     {
       currency: 'USD',
-      counterparty: 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh',
+      counterparty: 'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh',
       value: '-200'
     },
     {
-      currency: 'XRP',
+      currency: 'BMC',
       counterparty: '',
       value: '-0.00001'
     }
@@ -223,77 +223,77 @@ var redeemThenIssueBalanceChanges = {
 }
 
 var multipathBalanceChanges = {
-  rrnsYgWn13Z28GtRgznrSUsLfMkvsXCZSu: [
+  bbnsYgWn13Z28GtRgznbSUsLfMkvsXCZSu: [
     {
-      counterparty: 'r4nmQNH4Fhjfh6cHDbvVSsBv7KySbj4cBf',
+      counterparty: 'b4nmQNH4Fhjfh6cHDrvVSsBv7KySrj4cBf',
       currency: 'USD',
       value: '100'
     },
     {
-      counterparty: 'rnYDWQaRdMb5neCGgvFfhw3MBoxmv5LtfH',
+      counterparty: 'bnYDWQaRdMr5neCGgvFfhw3MBoxmv5LtfH',
       currency: 'USD',
       value: '-100'
     }
   ],
-  r4nmQNH4Fhjfh6cHDbvVSsBv7KySbj4cBf: [
+  b4nmQNH4Fhjfh6cHDrvVSsBv7KySrj4cBf: [
     {
-      counterparty: 'rrnsYgWn13Z28GtRgznrSUsLfMkvsXCZSu',
+      counterparty: 'bbnsYgWn13Z28GtRgznbSUsLfMkvsXCZSu',
       currency: 'USD',
       value: '-100'
     },
     {
       counterparty: '',
-      currency: 'XRP',
+      currency: 'BMC',
       value: '-0.00001'
     },
     {
-      counterparty: 'rJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ',
+      counterparty: 'bJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ',
       currency: 'USD',
       value: '-100'
     },
     {
-      counterparty: 'rGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD',
-      currency: 'USD',
-      value: '-100'
-    }
-  ],
-  rJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ: [
-    {
-      counterparty: 'r4nmQNH4Fhjfh6cHDbvVSsBv7KySbj4cBf',
-      currency: 'USD',
-      value: '100'
-    },
-    {
-      counterparty: 'rnYDWQaRdMb5neCGgvFfhw3MBoxmv5LtfH',
+      counterparty: 'bGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD',
       currency: 'USD',
       value: '-100'
     }
   ],
-  rGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD: [
+  bJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ: [
     {
-      counterparty: 'r4nmQNH4Fhjfh6cHDbvVSsBv7KySbj4cBf',
+      counterparty: 'b4nmQNH4Fhjfh6cHDrvVSsBv7KySrj4cBf',
       currency: 'USD',
       value: '100'
     },
     {
-      counterparty: 'rnYDWQaRdMb5neCGgvFfhw3MBoxmv5LtfH',
+      counterparty: 'bnYDWQaRdMr5neCGgvFfhw3MBoxmv5LtfH',
       currency: 'USD',
       value: '-100'
     }
   ],
-  rnYDWQaRdMb5neCGgvFfhw3MBoxmv5LtfH: [
+  bGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD: [
     {
-      counterparty: 'rJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ',
+      counterparty: 'b4nmQNH4Fhjfh6cHDrvVSsBv7KySrj4cBf',
       currency: 'USD',
       value: '100'
     },
     {
-      counterparty: 'rrnsYgWn13Z28GtRgznrSUsLfMkvsXCZSu',
+      counterparty: 'bnYDWQaRdMr5neCGgvFfhw3MBoxmv5LtfH',
+      currency: 'USD',
+      value: '-100'
+    }
+  ],
+  bnYDWQaRdMr5neCGgvFfhw3MBoxmv5LtfH: [
+    {
+      counterparty: 'bJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ',
       currency: 'USD',
       value: '100'
     },
     {
-      counterparty: 'rGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD',
+      counterparty: 'bbnsYgWn13Z28GtRgznbSUsLfMkvsXCZSu',
+      currency: 'USD',
+      value: '100'
+    },
+    {
+      counterparty: 'bGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD',
       currency: 'USD',
       value: '100'
     }
@@ -310,8 +310,8 @@ function loadFixture(filename) {
 }
 
 describe('parseBalanceChanges', function() {
-  it('XRP create account', function() {
-    var paymentResponse = loadFixture('payment-xrp-create-account.json')
+  it('BMC create account', function() {
+    var paymentResponse = loadFixture('payment-bmc-create-account.json')
     var result = parseBalanceChanges(paymentResponse.metadata)
     assert.deepEqual(result, createAccountBalanceChanges)
   })

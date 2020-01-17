@@ -14,7 +14,7 @@
       "source": {
         "address": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
         "maxAmount": {
-          "currency": "XRP",
+          "currency": "BMC",
           "value": "1.112209"
         }
       },
@@ -54,13 +54,13 @@
         ],
         "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59": [
           {
-            "currency": "XRP",
+            "currency": "BMC",
             "value": "-1.101208"
           }
         ],
         "r9tGqzZgKxVFvzKFdUqXAqTzazWBUia8Qr": [
           {
-            "currency": "XRP",
+            "currency": "BMC",
             "value": "1.101198"
           },
           {
@@ -75,7 +75,7 @@
           {
             "direction": "buy",
             "quantity": {
-              "currency": "XRP",
+              "currency": "BMC",
               "value": "1.101198"
             },
             "totalPrice": {
@@ -108,7 +108,7 @@
       "source": {
         "address": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
         "maxAmount": {
-          "currency": "XRP",
+          "currency": "BMC",
           "value": "1.112209"
         }
       },
@@ -148,13 +148,13 @@
         ],
         "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59": [
           {
-            "currency": "XRP",
+            "currency": "BMC",
             "value": "-1.101208"
           }
         ],
         "r9tGqzZgKxVFvzKFdUqXAqTzazWBUia8Qr": [
           {
-            "currency": "XRP",
+            "currency": "BMC",
             "value": "1.101198"
           },
           {
@@ -169,7 +169,7 @@
           {
             "direction": "buy",
             "quantity": {
-              "currency": "XRP",
+              "currency": "BMC",
               "value": "1.101198"
             },
             "totalPrice": {

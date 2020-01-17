@@ -1,12 +1,12 @@
-const _ = require('lodash');
-const assert = require('assert');
+const _ = require('lodash')
+const assert = require('assert')
 const {encodeForSigning, encodeForSigningClaim, encodeForMultisigning} =
-  require('../src');
+  require('../src')
 
 const tx_json = {
-  Account: 'r9LqNeG6qHxjeUocjvVki2XR35weJ9mZgQ',
+  Account: 'bKsa7XNTpJ2oWftVZyqx32sr8K7SCRqkB3',
   Amount: '1000',
-  Destination: 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh',
+  Destination: 'bhjbpKUzzGqb26tJtn1aNMbEjxpd2MV1Ze',
   Fee: '10',
   Flags: 2147483648,
   Sequence: 1,
@@ -19,11 +19,11 @@ const tx_json = {
     '3CD7B9B',
   SigningPubKey:
     'ED5F5AC8B98974A3CA843326D9B88CEBD0560177B973EE0B149F782CFAA06DC66A'
-};
+}
 
 describe('Signing data', function() {
   it('can create single signing blobs', function() {
-    const actual = encodeForSigning(tx_json);
+    const actual = encodeForSigning(tx_json)
     assert.equal(actual,
       ['53545800', // signingPrefix
         // TransactionType
@@ -52,18 +52,18 @@ describe('Signing data', function() {
         '81',
         // VLLength
         '14',
-        '5B812C9D57731E27A2DA8B1830195F88EF32A3B6',
+        'C5D7AA79916935FD4287CE8625680C5769DC021D',
         // Destination
         '83',
         // VLLength
         '14',
-        'B5F762798A53D543A014CAF8B297CFF8F2F937E8'].join('')
-    );
-  });
+        '28D9DDDD385693284EA537E22571DC4ED0FE98E4'].join('')
+    )
+  })
   it('can create multi signing blobs', function() {
-    const signingAccount = 'rJZdUusLDtY9NEsGea7ijqhVrXv98rYBYN';
-    const signingJson = _.assign({}, tx_json, {SigningPubKey: ''});
-    const actual = encodeForMultisigning(signingJson, signingAccount);
+    const signingAccount = 'bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh'
+    const signingJson = _.assign({}, tx_json, {SigningPubKey: ''})
+    const actual = encodeForMultisigning(signingJson, signingAccount)
     assert.equal(actual,
       ['534D5400', // signingPrefix
         // TransactionType
@@ -92,16 +92,16 @@ describe('Signing data', function() {
         '81',
         // VLLength
         '14',
-        '5B812C9D57731E27A2DA8B1830195F88EF32A3B6',
+        'C5D7AA79916935FD4287CE8625680C5769DC021D',
         // Destination
         '83',
         // VLLength
         '14',
-        'B5F762798A53D543A014CAF8B297CFF8F2F937E8',
+        '28D9DDDD385693284EA537E22571DC4ED0FE98E4',
         // signingAccount suffix
-        'C0A5ABEF242802EFED4B041E8F2D4A8CC86AE3D1'].join('')
-    );
-  });
+        'B5F762798A53D543A014CAF8B297CFF8F2F937E8'].join('')
+    )
+  })
   it('can create claim blob', function() {
     const channel =
       '43904CBFCDCEC530B4037871F86EE90BF799DF8D2E0EA564BC8A3F332E4F5FB1'
@@ -117,4 +117,4 @@ describe('Signing data', function() {
       '00000000000003E8'
     ].join(''))
   })
-});
+})

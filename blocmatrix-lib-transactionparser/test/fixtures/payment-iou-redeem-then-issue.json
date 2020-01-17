@@ -1,12 +1,12 @@
 {
    "result" : {
-      "Account" : "rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
+      "Account" : "bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
       "Amount" : {
          "currency" : "USD",
-         "issuer" : "rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
+         "issuer" : "bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
          "value" : "200"
       },
-      "Destination" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+      "Destination" : "bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh",
       "Fee" : "10",
       "Flags" : 2147483648,
       "Sequence" : 3,
@@ -24,29 +24,29 @@
                   "FinalFields" : {
                      "Balance" : {
                         "currency" : "USD",
-                        "issuer" : "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                        "issuer" : "bbbbbbbbbbbbbbbbbbbbBZrvji",
                         "value" : "100"
                      },
                      "Flags" : 196608,
                      "HighLimit" : {
                         "currency" : "USD",
-                        "issuer" : "rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
+                        "issuer" : "bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
                         "value" : "500"
                      },
                      "HighNode" : "0000000000000000",
                      "LowLimit" : {
                         "currency" : "USD",
-                        "issuer" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                        "issuer" : "bHr9CJAWyB4bj91VRWn96DkukG4rwdtyTh",
                         "value" : "500"
                      },
                      "LowNode" : "0000000000000000"
                   },
-                  "LedgerEntryType" : "RippleState",
+                  "LedgerEntryType" : "BlocmatrixState",
                   "LedgerIndex" : "88DA36A0E2F92E2E3504DC7936FDB719769486A6BE1BEC4F1E3B580538D28B4A",
                   "PreviousFields" : {
                      "Balance" : {
                         "currency" : "USD",
-                        "issuer" : "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                        "issuer" : "bbbbbbbbbbbbbbbbbbbbBZrvji",
                         "value" : "-100"
                      }
                   },
@@ -57,7 +57,7 @@
             {
                "ModifiedNode" : {
                   "FinalFields" : {
-                     "Account" : "rPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
+                     "Account" : "bPMh7Pi9ct699iZUTWaytJUoHcJ7cgyziK",
                      "Balance" : "999999970",
                      "Flags" : 0,
                      "OwnerCount" : 1,

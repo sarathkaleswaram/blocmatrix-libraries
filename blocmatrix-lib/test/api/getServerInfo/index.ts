@@ -24,7 +24,7 @@ export default <TestSuite>{
       await api.getServerInfo()
       throw new Error('Should throw NetworkError')
     } catch (err) {
-      assert(err instanceof api.errors.RippledError)
+      assert(err instanceof api.errors.BlocmatrixdError)
       assert.equal(err.message, 'You are placing too much load on the server.')
       assert.equal(err.data.error, 'slowDown')
     }

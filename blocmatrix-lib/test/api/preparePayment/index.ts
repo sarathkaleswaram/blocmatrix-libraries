@@ -1,7 +1,7 @@
 import {assertResultMatch, TestSuite, assertRejects} from '../../utils'
 import responses from '../../fixtures/responses'
 import requests from '../../fixtures/requests'
-import {ValidationError} from 'ripple-api/common/errors'
+import {ValidationError} from 'blocmatrix-api/common/errors'
 const instructionsWithMaxLedgerVersionOffset = {maxLedgerVersionOffset: 100}
 const {preparePayment: REQUEST_FIXTURES} = requests
 const {preparePayment: RESPONSE_FIXTURES} = responses
@@ -26,37 +26,37 @@ export default <TestSuite>{
     assertResultMatch(response, RESPONSE_FIXTURES.normal, 'prepare')
   },
 
-  'min amount xrp': async (api, address) => {
+  'min amount bmc': async (api, address) => {
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
       maxFee: '0.000012'
     }
     const response = await api.preparePayment(
       address,
-      REQUEST_FIXTURES.minAmountXRP,
+      REQUEST_FIXTURES.minAmountBMC,
       localInstructions
     )
-    assertResultMatch(response, RESPONSE_FIXTURES.minAmountXRP, 'prepare')
+    assertResultMatch(response, RESPONSE_FIXTURES.minAmountBMC, 'prepare')
   },
 
-  'min amount xrp2xrp': async (api, address) => {
+  'min amount bmc2bmc': async (api, address) => {
     const response = await api.preparePayment(
       address,
       REQUEST_FIXTURES.minAmount,
       instructionsWithMaxLedgerVersionOffset
     )
-    assertResultMatch(response, RESPONSE_FIXTURES.minAmountXRPXRP, 'prepare')
+    assertResultMatch(response, RESPONSE_FIXTURES.minAmountBMCBMC, 'prepare')
   },
 
-  'XRP to XRP': async (api, address) => {
+  'BMC to BMC': async (api, address) => {
     const payment = {
       source: {
         address: 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
-        maxAmount: {value: '1', currency: 'XRP'}
+        maxAmount: {value: '1', currency: 'BMC'}
       },
       destination: {
         address: 'rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo',
-        amount: {value: '1', currency: 'XRP'}
+        amount: {value: '1', currency: 'BMC'}
       }
     }
     const expected = {
@@ -76,7 +76,7 @@ export default <TestSuite>{
     assertResultMatch(response, expected, 'prepare')
   },
 
-  'XRP drops to XRP drops': async (api, address) => {
+  'BMC drops to BMC drops': async (api, address) => {
     const payment = {
       source: {
         address: 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
@@ -104,7 +104,7 @@ export default <TestSuite>{
     assertResultMatch(response, expected, 'prepare')
   },
 
-  'XRP drops to XRP': async (api, address) => {
+  'BMC drops to BMC': async (api, address) => {
     const payment = {
       source: {
         address: 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
@@ -112,7 +112,7 @@ export default <TestSuite>{
       },
       destination: {
         address: 'rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo',
-        amount: {value: '1', currency: 'XRP'}
+        amount: {value: '1', currency: 'BMC'}
       }
     }
     const expected = {
@@ -132,11 +132,11 @@ export default <TestSuite>{
     assertResultMatch(response, expected, 'prepare')
   },
 
-  'XRP to XRP drops': async (api, address) => {
+  'BMC to BMC drops': async (api, address) => {
     const payment = {
       source: {
         address: 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59',
-        maxAmount: {value: '1', currency: 'XRP'}
+        maxAmount: {value: '1', currency: 'BMC'}
       },
       destination: {
         address: 'rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo',
@@ -204,7 +204,7 @@ export default <TestSuite>{
     )
   },
 
-  'rejects promise and does not throw when fee exceeds maxFeeXRP': async (
+  'rejects promise and does not throw when fee exceeds maxFeeBMC': async (
     api,
     address
   ) => {
@@ -221,15 +221,15 @@ export default <TestSuite>{
     return assertRejects(
       api.preparePayment(address, payment, {fee: '3'}),
       ValidationError,
-      'Fee of 3 XRP exceeds max of 2 XRP. To use this fee, increase `maxFeeXRP` in the RippleAPI constructor.'
+      'Fee of 3 BMC exceeds max of 2 BMC. To use this fee, increase `maxFeeBMC` in the BlocmatrixAPI constructor.'
     )
   },
 
-  'XRP to XRP no partial': async (api, address) => {
+  'BMC to BMC no partial': async (api, address) => {
     return assertRejects(
       api.preparePayment(address, REQUEST_FIXTURES.wrongPartial),
       ValidationError,
-      'XRP to XRP payments cannot be partial payments'
+      'BMC to BMC payments cannot be partial payments'
     )
   },
 
@@ -249,7 +249,7 @@ export default <TestSuite>{
     )
   },
 
-  'throws when fee exceeds 2 XRP': async (api, address) => {
+  'throws when fee exceeds 2 BMC': async (api, address) => {
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
       fee: '2.1'
@@ -257,7 +257,7 @@ export default <TestSuite>{
     return assertRejects(
       api.preparePayment(address, REQUEST_FIXTURES.normal, localInstructions),
       ValidationError,
-      'Fee of 2.1 XRP exceeds max of 2 XRP. To use this fee, increase `maxFeeXRP` in the RippleAPI constructor.'
+      'Fee of 2.1 BMC exceeds max of 2 BMC. To use this fee, increase `maxFeeBMC` in the BlocmatrixAPI constructor.'
     )
   },
 
@@ -297,7 +297,7 @@ export default <TestSuite>{
     assertResultMatch(response, RESPONSE_FIXTURES.minAmount, 'prepare')
   },
 
-  'caps fee at 2 XRP by default': async (api, address) => {
+  'caps fee at 2 BMC by default': async (api, address) => {
     api._feeCushion = 1000000
     const expectedResponse = {
       txJSON:
@@ -316,11 +316,11 @@ export default <TestSuite>{
     assertResultMatch(response, expectedResponse, 'prepare')
   },
 
-  'allows fee exceeding 2 XRP when maxFeeXRP is higher': async (
+  'allows fee exceeding 2 BMC when maxFeeBMC is higher': async (
     api,
     address
   ) => {
-    api._maxFeeXRP = '2.2'
+    api._maxFeeBMC = '2.2'
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
       fee: '2.1'
@@ -342,7 +342,7 @@ export default <TestSuite>{
     assertResultMatch(response, expectedResponse, 'prepare')
   },
 
-  'fee - default maxFee of 2 XRP': async (api, address) => {
+  'fee - default maxFee of 2 BMC': async (api, address) => {
     api._feeCushion = 1000000
     const expectedResponse = {
       txJSON:
@@ -361,12 +361,12 @@ export default <TestSuite>{
     assertResultMatch(response, expectedResponse, 'prepare')
   },
 
-  'fee - capped to maxFeeXRP when maxFee exceeds maxFeeXRP': async (
+  'fee - capped to maxFeeBMC when maxFee exceeds maxFeeBMC': async (
     api,
     address
   ) => {
     api._feeCushion = 1000000
-    api._maxFeeXRP = '3'
+    api._maxFeeBMC = '3'
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
       maxFee: '4'
@@ -390,7 +390,7 @@ export default <TestSuite>{
 
   'fee - capped to maxFee': async (api, address) => {
     api._feeCushion = 1000000
-    api._maxFeeXRP = '5'
+    api._maxFeeBMC = '5'
     const localInstructions = {
       ...instructionsWithMaxLedgerVersionOffset,
       maxFee: '4'

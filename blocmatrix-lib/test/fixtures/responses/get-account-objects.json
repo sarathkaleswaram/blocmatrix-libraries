@@ -14,7 +14,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "ASP",
         "issuer": "r3vi7mWxru9rJCxETCyA1CHvzL96eZWx5z",
@@ -40,7 +40,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "XAU",
         "issuer": "r3vi7mWxru9rJCxETCyA1CHvzL96eZWx5z",
@@ -66,7 +66,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "USD",
         "issuer": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
@@ -92,7 +92,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "MXN",
         "issuer": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
@@ -118,7 +118,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "EUR",
         "issuer": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
@@ -144,7 +144,7 @@
         "value": "3"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "CNY",
         "issuer": "rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK",
@@ -170,7 +170,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "DYM",
         "issuer": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
@@ -196,7 +196,7 @@
         "value": "0"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "CHF",
         "issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",
@@ -222,7 +222,7 @@
         "value": "3"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "BTC",
         "issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",
@@ -248,7 +248,7 @@
         "value": "5000"
       },
       "HighNode": "0000000000000000",
-      "LedgerEntryType": "RippleState",
+      "LedgerEntryType": "BlocmatrixState",
       "LowLimit": {
         "currency": "USD",
         "issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",

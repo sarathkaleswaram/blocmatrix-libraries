@@ -2,9 +2,9 @@ import _ from 'lodash'
 import assert from 'assert-diff'
 import setupAPI from './setup-api'
 import responses from './fixtures/responses'
-import ledgerClosed from './fixtures/rippled/ledger-close.json'
-import {RippleAPI} from 'ripple-api'
-const schemaValidator = RippleAPI._PRIVATE.schemaValidator
+import ledgerClosed from './fixtures/blocmatrixd/ledger-close.json'
+import {BlocmatrixAPI} from 'blocmatrix-api'
+const schemaValidator = BlocmatrixAPI._PRIVATE.schemaValidator
 
 const TIMEOUT = 20000
 
@@ -20,7 +20,7 @@ function checkResult(expected, schemaName, response) {
   return response
 }
 
-describe('RippleAPIBroadcast', function() {
+describe('BlocmatrixAPIBroadcast', function() {
   this.timeout(TIMEOUT)
   beforeEach(setupAPI.setupBroadcast)
   afterEach(setupAPI.teardown)

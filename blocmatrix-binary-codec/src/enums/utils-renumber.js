@@ -97,38 +97,38 @@ const input = {
   'tecKILLED': 150,
   'tecHAS_OBLIGATIONS': 151,
   'tecTOO_SOON': 152
-};
+}
 
-let starting_from_temBAD_SEND_BMC_PATHS = -284;
+let starting_from_temBAD_SEND_BMC_PATHS = -284
 
-let starting_from_tefFAILURE = -199;
+let starting_from_tefFAILURE = -199
 
-let starting_from_terRETRY = -99;
+let starting_from_terRETRY = -99
 
-const tesSUCCESS = 0;
+const tesSUCCESS = 0
 
-let starting_from_tecCLAIM = 100;
+let starting_from_tecCLAIM = 100
 
-const starting_from_tecDIR_FULL = 121;
+const starting_from_tecDIR_FULL = 121
 
-let previousKey = 'tem';
+let previousKey = 'tem'
 Object.keys(input).forEach(key => {
   if (key.substring(0, 3) !== previousKey.substring(0, 3)) {
-    console.log();
-    previousKey = key;
+    console.log()
+    previousKey = key
   }
   if (key.substring(0, 3) === 'tem') {
-    console.log(`    "${key}": ${starting_from_temBAD_SEND_BMC_PATHS++},`);
+    console.log(`    "${key}": ${starting_from_temBAD_SEND_BMC_PATHS++},`)
   } else if (key.substring(0, 3) === 'tef') {
-    console.log(`    "${key}": ${starting_from_tefFAILURE++},`);
+    console.log(`    "${key}": ${starting_from_tefFAILURE++},`)
   } else if (key.substring(0, 3) === 'ter') {
-    console.log(`    "${key}": ${starting_from_terRETRY++},`);
+    console.log(`    "${key}": ${starting_from_terRETRY++},`)
   } else if (key.substring(0, 3) === 'tes') {
-    console.log(`    "${key}": ${tesSUCCESS},`);
+    console.log(`    "${key}": ${tesSUCCESS},`)
   } else if (key.substring(0, 3) === 'tec') {
     if (key === 'tecDIR_FULL') {
-      starting_from_tecCLAIM = starting_from_tecDIR_FULL;
+      starting_from_tecCLAIM = starting_from_tecDIR_FULL
     }
-    console.log(`    "${key}": ${starting_from_tecCLAIM++},`);
+    console.log(`    "${key}": ${starting_from_tecCLAIM++},`)
   }
-});
+})

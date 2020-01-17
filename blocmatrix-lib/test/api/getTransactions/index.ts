@@ -1,10 +1,10 @@
-import {RippleAPI} from 'ripple-api'
+import {BlocmatrixAPI} from 'blocmatrix-api'
 import assert from 'assert-diff'
 import {assertResultMatch, TestSuite, assertRejects} from '../../utils'
 import responses from '../../fixtures/responses'
 import hashes from '../../fixtures/hashes.json'
 import addresses from '../../fixtures/addresses.json'
-const utils = RippleAPI._PRIVATE.ledgerUtils
+const utils = BlocmatrixAPI._PRIVATE.ledgerUtils
 const {getTransactions: RESPONSE_FIXTURES} = responses
 
 /**
@@ -119,13 +119,13 @@ export default <TestSuite>{
     response.forEach(t => assert(t.outcome.result === 'tesSUCCESS'))
   },
 
-  // this is the case where core.RippleError just falls
+  // this is the case where core.BlocmatrixError just falls
   // through the api to the user
   'error': async (api, address) => {
     const options = {types: ['payment', 'order'], initiated: true, limit: 13}
     return assertRejects(
       api.getTransactions(address, options),
-      api.errors.RippleError
+      api.errors.BlocmatrixError
     )
   },
 

@@ -1,6 +1,6 @@
 import assert from 'assert'
-import {RippleAPI} from 'ripple-api'
-const RangeSet = RippleAPI._PRIVATE.RangeSet
+import {BlocmatrixAPI} from 'blocmatrix-api'
+const RangeSet = BlocmatrixAPI._PRIVATE.RangeSet
 
 describe('RangeSet', function() {
   it('addRange()/addValue()', function() {

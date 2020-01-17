@@ -1,5 +1,3 @@
-# ripple-binary-codec
+# blocmatrix-binary-codec
 
-encode/decode to/from the ripple binary serialization format
-
-[![NPM](https://nodei.co/npm/ripple-binary-codec.png)](https://www.npmjs.org/package/ripple-binary-codec)
+encode/decode to/from the blocmatrix binary serialization format

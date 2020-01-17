@@ -4,11 +4,11 @@ var fixture = require('./fixtures/payment-iou-multipath.json')
 var getAffectedAccounts = require('../src').getAffectedAccounts
 
 var accounts = [
-  'r4nmQNH4Fhjfh6cHDbvVSsBv7KySbj4cBf',
-  'rrnsYgWn13Z28GtRgznrSUsLfMkvsXCZSu',
-  'rJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ',
-  'rGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD',
-  'rnYDWQaRdMb5neCGgvFfhw3MBoxmv5LtfH'
+  'b4nmQNH4Fhjfh6cHDrvVSsBv7KySrj4cBf',
+  'bbnsYgWn13Z28GtRgznbSUsLfMkvsXCZSu',
+  'bJsaPnGdeo7BhMnHjuc3n44Mf7Ra1qkSVJ',
+  'bGpeQzUWFu4fMhJHZ1Via5aqFC3A5twZUD',
+  'bnYDWQaRdMr5neCGgvFfhw3MBoxmv5LtfH'
 ]
 
 describe('getAffectedAccounts', function() {

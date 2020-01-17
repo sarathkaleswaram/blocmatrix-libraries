@@ -1,6 +1,6 @@
 import assert from 'assert-diff'
 import {TestSuite} from '../../utils'
-import {RippleAPI} from 'ripple-api'
+import {BlocmatrixAPI} from 'blocmatrix-api'
 
 /**
  * Every test suite exports their tests in the default object.
@@ -8,22 +8,22 @@ import {RippleAPI} from 'ripple-api'
  * - Check out "test/api/index.ts" for more information about the test runner.
  */
 export default <TestSuite>{
-  'RippleAPI - implicit server port': () => {
-    new RippleAPI({server: 'wss://s1.ripple.com'})
+  'BlocmatrixAPI - implicit server port': () => {
+    new BlocmatrixAPI({server: 'wss://s1.blocmatrix.com'})
   },
 
-  'RippleAPI invalid options': () => {
+  'BlocmatrixAPI invalid options': () => {
     // @ts-ignore - This is intentionally invalid
-    assert.throws(() => new RippleAPI({invalid: true}))
+    assert.throws(() => new BlocmatrixAPI({invalid: true}))
   },
 
-  'RippleAPI valid options': () => {
-    const api = new RippleAPI({server: 'wss://s:1'})
+  'BlocmatrixAPI valid options': () => {
+    const api = new BlocmatrixAPI({server: 'wss://s:1'})
     const privateConnectionUrl = (api.connection as any)._url
     assert.deepEqual(privateConnectionUrl, 'wss://s:1')
   },
 
-  'RippleAPI invalid server uri': () => {
-    assert.throws(() => new RippleAPI({server: 'wss//s:1'}))
+  'BlocmatrixAPI invalid server uri': () => {
+    assert.throws(() => new BlocmatrixAPI({server: 'wss//s:1'}))
   }
 }

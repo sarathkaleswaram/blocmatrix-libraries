@@ -6,7 +6,7 @@
   "specification": {
     "checkID": "4F6DDA7972A5E8C8F2AA3D2A475E56475FA573C65B935E26EABDA5F06A982C70",
     "amount": {
-      "currency": "XRP",
+      "currency": "BMC",
       "value": "2.5"
     }
   },
@@ -17,13 +17,13 @@
     "balanceChanges": {
       "raLHvSZXacoGiCoWrdBhVGstZm6GhF7oRr": [
         {
-          "currency": "XRP",
+          "currency": "BMC",
           "value": "2.499988"
         }
       ],
       "rNpdNFXNMvEcaXDqMypi48gdSABZkYuyQE": [
         {
-          "currency": "XRP",
+          "currency": "BMC",
           "value": "-2.5"
         }
       ]
